@@ -25,7 +25,7 @@
 <body>
 
     <!-- ================================
-         POSTER AZRIEL
+         POSTER
     ================================= -->
 
     <section class="poster-section">
@@ -55,26 +55,15 @@
 
             <nav class="desktop-nav">
 
-                <a href="#profil">
-                    Profil
-                </a>
-
-                <a href="#visi">
-                    Visi
-                </a>
-
-                <a href="#misi">
-                    Misi
-                </a>
-
-                <a href="#program">
-                    Program
-                </a>
+                <a href="#profil">Profil</a>
+                <a href="#visi">Visi</a>
+                <a href="#misi">Misi</a>
+                <a href="#program">Program</a>
 
             </nav>
 
 
-            <!-- MOBILE MENU BUTTON -->
+            <!-- MOBILE BUTTON -->
 
             <button
                 class="menu-btn"
@@ -92,21 +81,11 @@
                 id="mobileMenu"
             >
 
-                <a href="#profil">
-                    Profil
-                </a>
-
-                <a href="#visi">
-                    Visi
-                </a>
-
-                <a href="#misi">
-                    Misi
-                </a>
-
-                <a href="#program">
-                    Program
-                </a>
+                <a href="#profil">Profil</a>
+                <a href="#visi">Visi</a>
+                <a href="#misi">Misi</a>
+                <a href="#program">Program</a>
+                <a href="#dukungan">Dukung Azriel</a>
 
             </div>
 
@@ -256,14 +235,10 @@
                     “
                 </div>
 
-
                 <h2>
-
                     Alasan Menjadi<br>
                     Ketua OSIS
-
                 </h2>
-
 
                 <p>
 
@@ -306,7 +281,6 @@
                     <h2>
                         Visi
                     </h2>
-
 
                     <p>
 
@@ -362,7 +336,6 @@
                             Keaktifan Siswa
                         </h3>
 
-
                         <p>
 
                             Meningkatkan keaktifan siswa
@@ -391,7 +364,6 @@
                             Program yang Bermanfaat
                         </h3>
 
-
                         <p>
 
                             Menciptakan program OSSA
@@ -419,7 +391,6 @@
                         <h3>
                             Disiplin & Tanggung Jawab
                         </h3>
-
 
                         <p>
 
@@ -469,11 +440,9 @@
                         01
                     </span>
 
-
                     <h3>
                         Kebersihan & Kenyamanan
                     </h3>
-
 
                     <p>
 
@@ -494,11 +463,9 @@
                         02
                     </span>
 
-
                     <h3>
                         Bakat & Kreativitas
                     </h3>
-
 
                     <p>
 
@@ -518,11 +485,9 @@
                         03
                     </span>
 
-
                     <h3>
                         OSSA Mendengar Aspirasi
                     </h3>
-
 
                     <p>
 
@@ -534,6 +499,56 @@
 
                 </article>
 
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             DUKUNG AZRIEL
+        ================================= -->
+
+        <section
+            id="dukungan"
+            class="support-section"
+        >
+
+            <div class="support-content">
+
+                <div class="section-label">
+                    06 — DUKUNGAN
+                </div>
+
+
+                <h2>
+                    Dukung<br>
+                    <span>Azriel #4.</span>
+                </h2>
+
+
+                <p>
+
+                    Dukung semangat dan gagasan Azriel
+                    untuk OSIS SMPIT AN-NAJMA.
+
+                </p>
+
+
+                <button
+                    class="support-button"
+                    id="supportButton"
+                >
+                    ❤️ Dukung Azriel #4
+                </button>
+
+
+                <div
+                    class="support-message"
+                    id="supportMessage"
+                >
+                    Terima kasih atas dukungannya! 🙌
+                </div>
 
             </div>
 
@@ -554,10 +569,8 @@
 
 
                 <h2>
-
                     AZRIEL<br>
                     <span>KHALIF RAKA</span>
-
                 </h2>
 
 
@@ -583,7 +596,6 @@
             AZRIEL KHALIF RAKA · CALON KETUA OSIS #4
         </p>
 
-
         <p>
             SMPIT AN-NAJMA
         </p>
@@ -592,7 +604,7 @@
 
 
     <!-- ================================
-         MOBILE MENU SCRIPT
+         SCRIPT HAMBURGER
     ================================= -->
 
     <script>
@@ -643,41 +655,95 @@
     </script>
 
 
-</body>
-</html>
-<script>
-    const revealElements =
-        document.querySelectorAll(
-            ".section, .closing, .program-card, .mission-item, .vision-card, .reason-box"
-        );
+    <!-- ================================
+         SCRIPT SCROLL REVEAL
+    ================================= -->
 
-    revealElements.forEach((element) => {
-        element.classList.add("reveal");
-    });
+    <script>
 
-    const revealObserver =
-        new IntersectionObserver(
-            (entries, observer) => {
+        const revealElements =
+            document.querySelectorAll(
+                ".section, .closing, .program-card, .mission-item, .vision-card, .reason-box, .support-section"
+            );
 
-                entries.forEach((entry) => {
 
-                    if (entry.isIntersecting) {
+        revealElements.forEach((element) => {
 
-                        entry.target.classList.add("show");
+            element.classList.add("reveal");
 
-                        observer.unobserve(entry.target);
+        });
 
-                    }
 
-                });
+        const revealObserver =
+            new IntersectionObserver(
+                (entries, observer) => {
 
-            },
-            {
-                threshold: 0.12
+                    entries.forEach((entry) => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "show"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach((element) => {
+
+            revealObserver.observe(element);
+
+        });
+
+    </script>
+
+
+    <!-- ================================
+         SCRIPT DUKUNGAN
+    ================================= -->
+
+    <script>
+
+        const supportButton =
+            document.getElementById(
+                "supportButton"
+            );
+
+
+        const supportMessage =
+            document.getElementById(
+                "supportMessage"
+            );
+
+
+        supportButton.addEventListener(
+            "click",
+            () => {
+
+                supportMessage.classList.add(
+                    "show"
+                );
+
+                supportButton.textContent =
+                    "❤️ Terima kasih!";
+
             }
         );
 
-    revealElements.forEach((element) => {
-        revealObserver.observe(element);
-    });
-</script>
+    </script>
+
+
+</body>
+</html>
