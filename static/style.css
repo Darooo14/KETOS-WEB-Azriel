@@ -27,44 +27,31 @@
     text-align: center;
 }
 
-
 .support-content {
     max-width: 750px;
     margin: auto;
 }
 
-
 .support-section .section-label {
     margin-bottom: 30px;
 }
 
-
 .support-section h2 {
     font-family: "Space Grotesk", sans-serif;
-
-    font-size:
-        clamp(50px, 8vw, 100px);
-
+    font-size: clamp(50px, 8vw, 100px);
     line-height: 0.9;
-
     letter-spacing: -5px;
 }
-
 
 .support-section h2 span {
     opacity: 0.25;
 }
 
-
 .support-section > .support-content > p {
     max-width: 550px;
-
     margin: 35px auto 0;
-
     font-size: 18px;
-
     line-height: 1.7;
-
     opacity: 0.65;
 }
 
@@ -75,18 +62,13 @@
 
 .support-thanks {
     margin: 50px auto 0;
-
     max-width: 600px;
-
     padding: 35px 30px;
 
-    border:
-        1px solid rgba(0, 0, 0, 0.08);
-
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 28px;
 
-    background:
-        rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.55);
 
     box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.06);
@@ -95,52 +77,35 @@
         thanksFloat 4s ease-in-out infinite;
 }
 
-
 .thanks-icon {
     font-size: 45px;
-
     margin-bottom: 15px;
 
     animation:
         thanksBounce 2s ease-in-out infinite;
 }
 
-
 .support-thanks h3 {
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
+    font-family: "Space Grotesk", sans-serif;
     font-size: 32px;
-
     margin-bottom: 12px;
 }
 
-
 .support-thanks p {
     margin: 0;
-
     font-size: 16px;
-
     line-height: 1.7;
-
     opacity: 0.65;
 }
-
 
 .support-number {
     margin-top: 45px;
 
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
+    font-family: "Space Grotesk", sans-serif;
     font-size: 90px;
-
     font-weight: 700;
 
     opacity: 0.08;
-
     letter-spacing: -5px;
 }
 
@@ -162,7 +127,6 @@
 
 }
 
-
 @keyframes thanksBounce {
 
     0%,
@@ -182,6 +146,178 @@
 
 
 /* =========================================
+   QR CODE & SHARE
+========================================= */
+
+.share-section {
+    padding: 130px 6%;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+.share-content {
+    max-width: 750px;
+    margin: auto;
+}
+
+.share-section .section-label {
+    margin-bottom: 30px;
+    opacity: 0.5;
+}
+
+.share-section h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(50px, 8vw, 100px);
+    line-height: 0.9;
+    letter-spacing: -5px;
+}
+
+.share-section h2 span {
+    opacity: 0.35;
+}
+
+.share-section > .share-content > p {
+    max-width: 550px;
+    margin: 35px auto 0;
+
+    font-size: 18px;
+    line-height: 1.7;
+    opacity: 0.6;
+}
+
+
+/* =========================================
+   QR CARD
+========================================= */
+
+.qr-card {
+    width: fit-content;
+
+    margin: 50px auto 30px;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.qr-card:hover {
+    transform:
+        translateY(-8px)
+        scale(1.02);
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================
+   QR
+========================================= */
+
+.qrcode {
+    width: 220px;
+    height: 220px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.qrcode img {
+    display: block;
+
+    width: 220px;
+    height: 220px;
+}
+
+.qr-card p {
+    margin: 18px 0 0;
+
+    color: #111;
+
+    font-size: 14px;
+
+    opacity: 0.55;
+}
+
+
+/* =========================================
+   SHARE BUTTON
+========================================= */
+
+.share-button {
+    border: none;
+
+    padding: 17px 30px;
+
+    border-radius: 999px;
+
+    background: white;
+
+    color: #111;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.share-button:hover {
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+    box-shadow:
+        0 15px 40px rgba(255, 255, 255, 0.15);
+}
+
+.share-button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================
+   COPY MESSAGE
+========================================= */
+
+.copy-message {
+    margin-top: 18px;
+
+    opacity: 0;
+
+    transform: translateY(8px);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+
+    font-size: 14px;
+}
+
+.copy-message.show {
+    opacity: 0.7;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
    MOBILE
 ========================================= */
 
@@ -191,26 +327,39 @@
         padding: 90px 6%;
     }
 
-
     .support-section h2 {
         letter-spacing: -3px;
     }
 
-
     .support-thanks {
         padding: 30px 22px;
-
         border-radius: 22px;
     }
-
 
     .support-thanks h3 {
         font-size: 27px;
     }
 
-
     .support-number {
         font-size: 65px;
+    }
+
+    .share-section {
+        padding: 90px 6%;
+    }
+
+    .share-section h2 {
+        letter-spacing: -3px;
+    }
+
+    .qr-card {
+        padding: 20px;
+    }
+
+    .qrcode,
+    .qrcode img {
+        width: 190px;
+        height: 190px;
     }
 
 }
