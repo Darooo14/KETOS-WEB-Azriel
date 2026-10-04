@@ -1,970 +1,1662 @@
 <!DOCTYPE html>
+
 <html lang="id">
 
 <head>
 
-    <meta charset="UTF-8">
+```
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <title>
-        Azriel Khalif Raka | Calon Ketua OSIS #4
-    </title>
+<title>
+    Azriel Khalif Raka | Calon Ketua OSIS #4
+</title>
 
-    <meta
-        name="description"
-        content="Profil Azriel Khalif Raka, calon Ketua OSIS SMPIT AN-NAJMA nomor urut 4."
-    >
+<meta
+    name="description"
+    content="Profil Azriel Khalif Raka, calon Ketua OSIS SMPIT AN-NAJMA nomor urut 4."
+>
 
-    <link
-        rel="stylesheet"
-        href="static/style.css"
-    >
+<link
+    rel="stylesheet"
+    href="static/style.css"
+>
 
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-        rel="stylesheet"
-    >
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+<style>
+
+    /* =========================================
+       EXTRA ANIMATION UPGRADE
+    ========================================= */
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+
+    body {
+        overflow-x: hidden;
+    }
+
+
+    /* SCROLL PROGRESS */
+
+    #scrollProgress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 4px;
+        background: linear-gradient(
+            90deg,
+            #ffffff,
+            #888888,
+            #ffffff
+        );
+        z-index: 99999;
+        transition: width 0.08s linear;
+        box-shadow:
+            0 0 12px rgba(255,255,255,.7);
+    }
+
+
+    /* PARTICLES */
+
+    #particles {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+
+    .particle {
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        background: rgba(255,255,255,.7);
+        border-radius: 50%;
+        animation:
+            particleFloat linear infinite;
+    }
+
+
+    @keyframes particleFloat {
+
+        0% {
+            transform:
+                translateY(110vh)
+                translateX(0)
+                scale(.5);
+
+            opacity: 0;
+        }
+
+        15% {
+            opacity: .8;
+        }
+
+        85% {
+            opacity: .8;
+        }
+
+        100% {
+            transform:
+                translateY(-10vh)
+                translateX(80px)
+                scale(1.2);
+
+            opacity: 0;
+        }
+
+    }
+
+
+    /* FLOATING GLOW */
+
+    .floating-glow {
+        position: fixed;
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 0;
+        opacity: .08;
+        filter: blur(80px);
+        background: white;
+        transform: translate(-50%, -50%);
+        transition:
+            left .8s ease,
+            top .8s ease;
+    }
+
+
+    /* MAKE CONTENT ABOVE PARTICLES */
+
+    header,
+    main,
+    footer {
+        position: relative;
+        z-index: 1;
+    }
+
+
+    /* HERO TEXT REVEAL */
+
+    .hero-content > * {
+        opacity: 0;
+        transform: translateY(35px);
+        animation: heroReveal .8s cubic-bezier(.2,.8,.2,1)
+                   forwards;
+    }
+
+
+    .hero-content .badge {
+        animation-delay: .15s;
+    }
+
+
+    .hero-content .school {
+        animation-delay: .3s;
+    }
+
+
+    .hero-content h1 {
+        animation-delay: .45s;
+    }
+
+
+    .hero-content .hero-description {
+        animation-delay: .6s;
+    }
+
+
+    .hero-content .hero-button {
+        animation-delay: .75s;
+    }
+
+
+    @keyframes heroReveal {
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    }
+
+
+    /* PHOTO 3D */
+
+    .photo-card {
+        transform-style: preserve-3d;
+        transition:
+            transform .15s ease-out,
+            box-shadow .3s ease;
+        will-change: transform;
+    }
+
+
+    .photo-card:hover {
+        box-shadow:
+            0 25px 70px rgba(0,0,0,.35);
+    }
+
+
+    /* 3D ELEMENT */
+
+    .photo-card .number {
+        transform: translateZ(45px);
+    }
+
+
+    /* TILT CARDS */
+
+    .program-card,
+    .mission-item,
+    .vision-card,
+    .reason-box {
+        transform-style: preserve-3d;
+        transition:
+            transform .25s ease,
+            box-shadow .25s ease;
+    }
+
+
+    .program-card:hover,
+    .mission-item:hover,
+    .vision-card:hover,
+    .reason-box:hover {
+        transform:
+            translateY(-8px)
+            scale(1.01);
+    }
+
+
+    /* MAGNETIC BUTTON */
+
+    .hero-button,
+    .share-button {
+        position: relative;
+        overflow: hidden;
+        transition:
+            transform .2s ease,
+            box-shadow .3s ease;
+    }
+
+
+    .hero-button:hover,
+    .share-button:hover {
+        box-shadow:
+            0 10px 35px rgba(255,255,255,.18);
+    }
+
+
+    /* RIPPLE */
+
+    .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255,255,255,.35);
+        transform: scale(0);
+        animation: rippleAnimation .6s linear;
+        pointer-events: none;
+    }
+
+
+    @keyframes rippleAnimation {
+
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+
+    }
+
+
+    /* SUPPORT THANKS */
+
+    .support-thanks {
+        transition:
+            transform .4s ease,
+            box-shadow .4s ease;
+    }
+
+
+    .support-thanks:hover {
+        transform:
+            translateY(-6px)
+            scale(1.015);
+
+        box-shadow:
+            0 20px 60px rgba(0,0,0,.2);
+    }
+
+
+    .thanks-icon {
+        display: inline-block;
+        animation:
+            thanksFloat 2s ease-in-out infinite;
+    }
+
+
+    @keyframes thanksFloat {
+
+        0%,
+        100% {
+            transform: translateY(0) rotate(0deg);
+        }
+
+        50% {
+            transform:
+                translateY(-8px)
+                rotate(5deg);
+        }
+
+    }
+
+
+    /* SECTION GLOW */
+
+    .section,
+    .support-section,
+    .share-section,
+    .closing {
+        isolation: isolate;
+    }
+
+
+    /* SMOOTH IMAGE */
+
+    img {
+        transition:
+            transform .5s ease,
+            filter .5s ease;
+    }
+
+
+    .photo-card:hover img {
+        transform: scale(1.035);
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 768px) {
+
+        .floating-glow {
+            width: 220px;
+            height: 220px;
+            filter: blur(60px);
+        }
+
+
+        .particle {
+            width: 2px;
+            height: 2px;
+        }
+
+
+        .photo-card:hover,
+        .program-card:hover,
+        .mission-item:hover,
+        .vision-card:hover,
+        .reason-box:hover {
+            transform: none;
+        }
+
+    }
+
+
+    /* REDUCE MOTION */
+
+    @media (prefers-reduced-motion: reduce) {
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: .01ms !important;
+            animation-iteration-count: 1 !important;
+            scroll-behavior: auto !important;
+            transition-duration: .01ms !important;
+        }
+
+    }
+
+</style>
+```
 
 </head>
 
-
 <body>
 
+```
+<!-- SCROLL PROGRESS -->
 
-    <!-- ================================
-         POSTER
-    ================================= -->
+<div id="scrollProgress"></div>
 
-    <section class="poster-section">
 
-        <img
-            src="WhatsApp Image 2026-10-03 at 13.44.55.jpeg"
-            alt="Poster Azriel Khalif Raka"
-            class="poster-img"
+<!-- PARTICLES -->
+
+<div id="particles"></div>
+
+
+<!-- FLOATING GLOW -->
+
+<div
+    class="floating-glow"
+    id="floatingGlow"
+></div>
+
+
+
+<!-- ================================
+     POSTER
+================================= -->
+
+<section class="poster-section">
+
+    <img
+        src="WhatsApp Image 2026-10-03 at 13.44.55.jpeg"
+        alt="Poster Azriel Khalif Raka"
+        class="poster-img"
+    >
+
+</section>
+
+
+
+<!-- ================================
+     NAVBAR
+================================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a
+            href="#home"
+            class="logo magnetic"
         >
+            AZRIEL<span>#4</span>
+        </a>
 
-    </section>
 
+        <nav class="desktop-nav">
 
-
-    <!-- ================================
-         NAVBAR
-    ================================= -->
-
-    <header class="navbar">
-
-        <div class="nav-container">
-
-            <a
-                href="#home"
-                class="logo"
-            >
-                AZRIEL<span>#4</span>
+            <a href="#profil">
+                Profil
             </a>
 
+            <a href="#visi">
+                Visi
+            </a>
 
-            <!-- DESKTOP MENU -->
+            <a href="#misi">
+                Misi
+            </a>
 
-            <nav class="desktop-nav">
+            <a href="#program">
+                Program
+            </a>
 
-                <a href="#profil">
-                    Profil
-                </a>
-
-                <a href="#visi">
-                    Visi
-                </a>
-
-                <a href="#misi">
-                    Misi
-                </a>
-
-                <a href="#program">
-                    Program
-                </a>
-
-            </nav>
+        </nav>
 
 
-            <!-- MOBILE BUTTON -->
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Buka menu"
+        >
+            ☰
+        </button>
 
-            <button
-                class="menu-btn"
-                id="menuBtn"
-                aria-label="Buka menu"
+
+        <div
+            class="mobile-menu"
+            id="mobileMenu"
+        >
+
+            <a href="#profil">
+                Profil
+            </a>
+
+            <a href="#visi">
+                Visi
+            </a>
+
+            <a href="#misi">
+                Misi
+            </a>
+
+            <a href="#program">
+                Program
+            </a>
+
+            <a href="#dukungan">
+                Dukung Azriel
+            </a>
+
+            <a href="#share">
+                Bagikan Website
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================================
+     MAIN
+================================= -->
+
+<main id="home">
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                CALON KETUA OSIS
+            </div>
+
+            <p class="school">
+                SMPIT AN-NAJMA
+            </p>
+
+            <h1>
+                AZRIEL<br>
+                <span>KHALIF RAKA</span>
+            </h1>
+
+            <p class="hero-description">
+                Calon Ketua OSIS nomor urut
+                <strong>#4</strong>
+            </p>
+
+            <a
+                href="#profil"
+                class="hero-button magnetic ripple-button"
             >
-                ☰
-            </button>
+                Lihat Profil
+                <span>↓</span>
+            </a>
+
+        </div>
 
 
-            <!-- MOBILE MENU -->
+        <div class="hero-photo">
 
-            <div
-                class="mobile-menu"
-                id="mobileMenu"
-            >
+            <div class="photo-glow"></div>
 
-                <a href="#profil">
-                    Profil
-                </a>
+            <div class="photo-card tilt-card">
 
-                <a href="#visi">
-                    Visi
-                </a>
+                <img
+                    src="static/images/azriel.png"
+                    alt="Azriel Khalif Raka"
+                >
 
-                <a href="#misi">
-                    Misi
-                </a>
-
-                <a href="#program">
-                    Program
-                </a>
-
-                <a href="#dukungan">
-                    Dukung Azriel
-                </a>
-
-                <a href="#share">
-                    Bagikan Website
-                </a>
+                <div class="number">
+                    04
+                </div>
 
             </div>
 
         </div>
 
-    </header>
+    </section>
 
 
 
-    <!-- ================================
-         MAIN
-    ================================= -->
+    <!-- PROFIL -->
 
-    <main id="home">
+    <section
+        id="profil"
+        class="section"
+    >
+
+        <div class="section-label">
+            01 — PROFIL
+        </div>
+
+        <div class="profile-grid">
+
+            <div>
+
+                <h2>
+                    Mengenal<br>
+                    <span>Azriel.</span>
+                </h2>
+
+            </div>
 
 
+            <div class="profile-text">
 
-        <!-- ================================
-             HERO
-        ================================= -->
+                <p>
 
-        <section class="hero">
+                    <strong>
+                        AZRIEL KHALIF RAKA
+                    </strong>
 
-            <div class="hero-content">
+                    merupakan calon Ketua OSIS
+                    SMPIT AN-NAJMA dengan nomor
+                    urut <strong>4</strong>.
 
-                <div class="badge">
-                    CALON KETUA OSIS
-                </div>
-
-                <p class="school">
-                    SMPIT AN-NAJMA
                 </p>
 
-                <h1>
-                    AZRIEL<br>
-                    <span>KHALIF RAKA</span>
-                </h1>
 
-                <p class="hero-description">
-                    Calon Ketua OSIS nomor urut
-                    <strong>#4</strong>
+                <p>
+
+                    Pencalonan ini membawa gagasan
+                    mengenai organisasi siswa yang
+                    aktif, kreatif, disiplin,
+                    dan bertanggung jawab.
+
                 </p>
 
-                <a
-                    href="#profil"
-                    class="hero-button"
-                >
-                    Lihat Profil
-                    <span>↓</span>
-                </a>
+            </div>
 
+        </div>
+
+    </section>
+
+
+
+    <!-- ALASAN -->
+
+    <section class="section dark-section">
+
+        <div class="section-label">
+            02 — ALASAN
+        </div>
+
+
+        <div class="reason-box tilt-card">
+
+            <div class="quote-mark">
+                “
+            </div>
+
+            <h2>
+                Alasan Menjadi<br>
+                Ketua OSIS
+            </h2>
+
+            <p>
+
+                Membuat sebuah wadah bagi siswa
+                untuk mengembangkan bakat, minat,
+                dan kreativitas, serta untuk melatih
+                jiwa kepemimpinan, tanggung jawab,
+                dan kemandirian.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- VISI -->
+
+    <section
+        id="visi"
+        class="section"
+    >
+
+        <div class="section-label">
+            03 — VISI
+        </div>
+
+
+        <div class="vision-card tilt-card">
+
+            <div class="vision-number">
+                V
             </div>
 
 
-            <!-- FOTO -->
+            <div>
 
-            <div class="hero-photo">
+                <h2>
+                    Visi
+                </h2>
 
-                <div class="photo-glow"></div>
+                <p>
 
-                <div class="photo-card">
+                    “Mewujudkan OSSA yang aktif,
+                    kreatif, disiplin, dan
+                    bertanggung jawab dalam
+                    membangun sekolah yang lebih
+                    maju, nyaman, dan penuh prestasi.”
 
-                    <img
-                        src="static/images/azriel.png"
-                        alt="Azriel Khalif Raka"
-                    >
-
-                    <div class="number">
-                        04
-                    </div>
-
-                </div>
+                </p>
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
 
-        <!-- ================================
-             PROFIL
-        ================================= -->
+    <!-- MISI -->
 
-        <section
-            id="profil"
-            class="section"
-        >
+    <section
+        id="misi"
+        class="section dark-section"
+    >
 
-            <div class="section-label">
-                01 — PROFIL
-            </div>
+        <div class="section-label">
+            04 — MISI
+        </div>
 
-            <div class="profile-grid">
+
+        <h2 class="section-title">
+            Misi
+        </h2>
+
+
+        <div class="mission-list">
+
+
+            <article class="mission-item tilt-card">
+
+                <span>
+                    01
+                </span>
 
                 <div>
 
-                    <h2>
-                        Mengenal<br>
-                        <span>Azriel.</span>
-                    </h2>
-
-                </div>
-
-
-                <div class="profile-text">
+                    <h3>
+                        Keaktifan Siswa
+                    </h3>
 
                     <p>
 
-                        <strong>
-                            AZRIEL KHALIF RAKA
-                        </strong>
-
-                        merupakan calon Ketua OSIS
-                        SMPIT AN-NAJMA dengan nomor
-                        urut <strong>4</strong>.
-
-                    </p>
-
-
-                    <p>
-
-                        Pencalonan ini membawa gagasan
-                        mengenai organisasi siswa yang
-                        aktif, kreatif, disiplin,
-                        dan bertanggung jawab.
+                        Meningkatkan keaktifan siswa
+                        dalam kegiatan sekolah serta
+                        mengembangkan bakat dan minat.
 
                     </p>
 
                 </div>
 
-            </div>
-
-        </section>
+            </article>
 
 
 
-        <!-- ================================
-             ALASAN
-        ================================= -->
+            <article class="mission-item tilt-card">
 
-        <section class="section dark-section">
-
-            <div class="section-label">
-                02 — ALASAN
-            </div>
-
-
-            <div class="reason-box">
-
-                <div class="quote-mark">
-                    “
-                </div>
-
-                <h2>
-                    Alasan Menjadi<br>
-                    Ketua OSIS
-                </h2>
-
-                <p>
-
-                    Membuat sebuah wadah bagi siswa
-                    untuk mengembangkan bakat, minat,
-                    dan kreativitas, serta untuk melatih
-                    jiwa kepemimpinan, tanggung jawab,
-                    dan kemandirian.
-
-                </p>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ================================
-             VISI
-        ================================= -->
-
-        <section
-            id="visi"
-            class="section"
-        >
-
-            <div class="section-label">
-                03 — VISI
-            </div>
-
-
-            <div class="vision-card">
-
-                <div class="vision-number">
-                    V
-                </div>
-
+                <span>
+                    02
+                </span>
 
                 <div>
 
-                    <h2>
-                        Visi
-                    </h2>
+                    <h3>
+                        Program yang Bermanfaat
+                    </h3>
 
                     <p>
 
-                        “Mewujudkan OSSA yang aktif,
-                        kreatif, disiplin, dan
-                        bertanggung jawab dalam
-                        membangun sekolah yang lebih
-                        maju, nyaman, dan penuh prestasi.”
+                        Menciptakan program OSSA
+                        yang menarik dan bermanfaat
+                        bagi seluruh siswa.
 
                     </p>
 
                 </div>
 
-            </div>
-
-        </section>
+            </article>
 
 
 
-        <!-- ================================
-             MISI
-        ================================= -->
+            <article class="mission-item tilt-card">
 
-        <section
-            id="misi"
-            class="section dark-section"
-        >
+                <span>
+                    03
+                </span>
 
-            <div class="section-label">
-                04 — MISI
-            </div>
-
-
-            <h2 class="section-title">
-                Misi
-            </h2>
-
-
-            <div class="mission-list">
-
-
-                <article class="mission-item">
-
-                    <span>
-                        01
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Keaktifan Siswa
-                        </h3>
-
-                        <p>
-
-                            Meningkatkan keaktifan siswa
-                            dalam kegiatan sekolah serta
-                            mengembangkan bakat dan minat.
-
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-
-                <article class="mission-item">
-
-                    <span>
-                        02
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Program yang Bermanfaat
-                        </h3>
-
-                        <p>
-
-                            Menciptakan program OSSA
-                            yang menarik dan bermanfaat
-                            bagi seluruh siswa.
-
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-
-                <article class="mission-item">
-
-                    <span>
-                        03
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Disiplin & Tanggung Jawab
-                        </h3>
-
-                        <p>
-
-                            Menumbuhkan sikap disiplin,
-                            tanggung jawab, dan kepedulian
-                            antar warga sekolah.
-
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ================================
-             PROGRAM
-        ================================= -->
-
-        <section
-            id="program"
-            class="section"
-        >
-
-            <div class="section-label">
-                05 — PROGRAM KERJA
-            </div>
-
-
-            <h2 class="section-title">
-                Program Kerja
-            </h2>
-
-
-            <div class="program-grid">
-
-
-                <article class="program-card">
-
-                    <span class="program-number">
-                        01
-                    </span>
+                <div>
 
                     <h3>
-                        Kebersihan & Kenyamanan
+                        Disiplin & Tanggung Jawab
                     </h3>
 
                     <p>
 
-                        Mengadakan kegiatan kebersihan
-                        dan menjaga kenyamanan lingkungan
-                        sekolah.
+                        Menumbuhkan sikap disiplin,
+                        tanggung jawab, dan kepedulian
+                        antar warga sekolah.
 
                     </p>
 
-                </article>
-
-
-
-                <article class="program-card">
-
-                    <span class="program-number">
-                        02
-                    </span>
-
-                    <h3>
-                        Bakat & Kreativitas
-                    </h3>
-
-                    <p>
-
-                        Membuat kegiatan yang mendukung
-                        bakat dan kreativitas siswa.
-
-                    </p>
-
-                </article>
-
-
-
-                <article class="program-card">
-
-                    <span class="program-number">
-                        03
-                    </span>
-
-                    <h3>
-                        OSSA Mendengar Aspirasi
-                    </h3>
-
-                    <p>
-
-                        Menampung saran dan masukan
-                        siswa untuk menciptakan sekolah
-                        yang lebih baik.
-
-                    </p>
-
-                </article>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ================================
-             DUKUNGAN
-        ================================= -->
-
-        <section
-            id="dukungan"
-            class="support-section"
-        >
-
-            <div class="support-content">
-
-                <div class="section-label">
-                    06 — DUKUNGAN
                 </div>
 
+            </article>
 
-                <h2>
-                    Bersama<br>
-                    <span>Azriel #4.</span>
-                </h2>
 
+        </div>
+
+    </section>
+
+
+
+    <!-- PROGRAM -->
+
+    <section
+        id="program"
+        class="section"
+    >
+
+        <div class="section-label">
+            05 — PROGRAM KERJA
+        </div>
+
+
+        <h2 class="section-title">
+            Program Kerja
+        </h2>
+
+
+        <div class="program-grid">
+
+
+            <article class="program-card tilt-card">
+
+                <span class="program-number">
+                    01
+                </span>
+
+                <h3>
+                    Kebersihan & Kenyamanan
+                </h3>
 
                 <p>
 
-                    Terima kasih sudah meluangkan waktu
-                    untuk mengenal visi, misi, dan program
-                    Azriel Khalif Raka.
+                    Mengadakan kegiatan kebersihan
+                    dan menjaga kenyamanan lingkungan
+                    sekolah.
 
                 </p>
 
-
-                <div class="support-thanks">
-
-                    <div class="thanks-icon">
-                        🙌
-                    </div>
-
-                    <h3>
-                        Terima kasih!
-                    </h3>
-
-                    <p>
-
-                        Dukungan kalian menjadi semangat
-                        untuk mewujudkan OSIS yang lebih
-                        aktif, kreatif, disiplin, dan
-                        bertanggung jawab.
-
-                    </p>
-
-                </div>
-
-
-                <div class="support-number">
-                    #04
-                </div>
-
-            </div>
-
-        </section>
+            </article>
 
 
 
-        <!-- ================================
-             QR CODE & SHARE
-        ================================= -->
+            <article class="program-card tilt-card">
 
-        <section
-            id="share"
-            class="share-section"
-        >
+                <span class="program-number">
+                    02
+                </span>
 
-            <div class="share-content">
-
-                <div class="section-label">
-                    07 — BAGIKAN
-                </div>
-
-
-                <h2>
-                    Bagikan<br>
-                    <span>Website Ini.</span>
-                </h2>
-
+                <h3>
+                    Bakat & Kreativitas
+                </h3>
 
                 <p>
 
-                    Scan QR Code atau bagikan website
-                    Azriel kepada teman-temanmu.
+                    Membuat kegiatan yang mendukung
+                    bakat dan kreativitas siswa.
 
                 </p>
 
-
-                <!-- QR CODE -->
-
-                <div class="qr-card">
-
-                    <div
-                        id="qrcode"
-                        class="qrcode"
-                    ></div>
+            </article>
 
 
-                    <p>
-                        Scan untuk membuka website
-                        Azriel #4
-                    </p>
 
+            <article class="program-card tilt-card">
+
+                <span class="program-number">
+                    03
+                </span>
+
+                <h3>
+                    OSSA Mendengar Aspirasi
+                </h3>
+
+                <p>
+
+                    Menampung saran dan masukan
+                    siswa untuk menciptakan sekolah
+                    yang lebih baik.
+
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- DUKUNGAN -->
+
+    <section
+        id="dukungan"
+        class="support-section"
+    >
+
+        <div class="support-content">
+
+            <div class="section-label">
+                06 — DUKUNGAN
+            </div>
+
+
+            <h2>
+                Bersama<br>
+                <span>Azriel #4.</span>
+            </h2>
+
+
+            <p>
+
+                Terima kasih sudah meluangkan waktu
+                untuk mengenal visi, misi, dan program
+                Azriel Khalif Raka.
+
+            </p>
+
+
+            <div class="support-thanks tilt-card">
+
+                <div class="thanks-icon">
+                    🙌
                 </div>
 
+                <h3>
+                    Terima kasih!
+                </h3>
 
-                <!-- SHARE BUTTON -->
+                <p>
 
-                <button
-                    class="share-button"
-                    id="shareButton"
-                >
-                    📤 Bagikan Website
-                </button>
+                    Dukungan kalian menjadi semangat
+                    untuk mewujudkan OSIS yang lebih
+                    aktif, kreatif, disiplin, dan
+                    bertanggung jawab.
 
+                </p>
+
+            </div>
+
+
+            <div class="support-number">
+                #04
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SHARE -->
+
+    <section
+        id="share"
+        class="share-section"
+    >
+
+        <div class="share-content">
+
+            <div class="section-label">
+                07 — BAGIKAN
+            </div>
+
+
+            <h2>
+                Bagikan<br>
+                <span>Website Ini.</span>
+            </h2>
+
+
+            <p>
+
+                Scan QR Code atau bagikan website
+                Azriel kepada teman-temanmu.
+
+            </p>
+
+
+            <div class="qr-card">
 
                 <div
-                    class="copy-message"
-                    id="copyMessage"
-                >
-                    ✓ Link berhasil disalin!
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ================================
-             PENUTUP
-        ================================= -->
-
-        <section class="closing">
-
-            <div class="closing-content">
-
-                <div class="closing-number">
-                    #04
-                </div>
-
-
-                <h2>
-                    AZRIEL<br>
-                    <span>KHALIF RAKA</span>
-                </h2>
+                    id="qrcode"
+                    class="qrcode"
+                ></div>
 
 
                 <p>
-                    Calon Ketua OSIS SMPIT AN-NAJMA
+                    Scan untuk membuka website
+                    Azriel #4
                 </p>
 
             </div>
 
-        </section>
+
+            <button
+                class="share-button magnetic ripple-button"
+                id="shareButton"
+            >
+                📤 Bagikan Website
+            </button>
 
 
-    </main>
+            <div
+                class="copy-message"
+                id="copyMessage"
+            >
+                ✓ Link berhasil disalin!
+            </div>
 
+        </div>
 
-
-    <!-- ================================
-         FOOTER
-    ================================= -->
-
-    <footer>
-
-        <p>
-            AZRIEL KHALIF RAKA · CALON KETUA OSIS #4
-        </p>
-
-        <p>
-            SMPIT AN-NAJMA
-        </p>
-
-    </footer>
+    </section>
 
 
 
-    <!-- ================================
-         QR CODE LIBRARY
-    ================================= -->
+    <!-- PENUTUP -->
 
-    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <section class="closing">
 
+        <div class="closing-content">
 
-
-    <!-- ================================
-         HAMBURGER MENU
-    ================================= -->
-
-    <script>
-
-        const menuBtn =
-            document.getElementById("menuBtn");
-
-        const mobileMenu =
-            document.getElementById("mobileMenu");
+            <div class="closing-number">
+                #04
+            </div>
 
 
-        menuBtn.addEventListener("click", () => {
+            <h2>
+                AZRIEL<br>
+                <span>KHALIF RAKA</span>
+            </h2>
 
-            mobileMenu.classList.toggle("active");
+
+            <p>
+                Calon Ketua OSIS SMPIT AN-NAJMA
+            </p>
+
+        </div>
+
+    </section>
 
 
-            if (
-                mobileMenu.classList.contains("active")
-            ) {
+</main>
 
-                menuBtn.textContent = "✕";
 
-            } else {
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        AZRIEL KHALIF RAKA · CALON KETUA OSIS #4
+    </p>
+
+    <p>
+        SMPIT AN-NAJMA
+    </p>
+
+</footer>
+
+
+
+<!-- QR CODE -->
+
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+
+
+<!-- =========================================
+     PARTICLES
+========================================== -->
+
+<script>
+
+    const particles =
+        document.getElementById("particles");
+
+
+    for (let i = 0; i < 45; i++) {
+
+        const particle =
+            document.createElement("div");
+
+        particle.className =
+            "particle";
+
+
+        particle.style.left =
+            Math.random() * 100 + "%";
+
+
+        particle.style.animationDuration =
+            (8 + Math.random() * 15) + "s";
+
+
+        particle.style.animationDelay =
+            (-Math.random() * 15) + "s";
+
+
+        particle.style.opacity =
+            .2 + Math.random() * .7;
+
+
+        particles.appendChild(particle);
+
+    }
+
+</script>
+
+
+
+<!-- =========================================
+     MOBILE MENU
+========================================== -->
+
+<script>
+
+    const menuBtn =
+        document.getElementById("menuBtn");
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+
+    menuBtn.addEventListener("click", () => {
+
+        mobileMenu.classList.toggle("active");
+
+
+        if (
+            mobileMenu.classList.contains("active")
+        ) {
+
+            menuBtn.textContent = "✕";
+
+        } else {
+
+            menuBtn.textContent = "☰";
+
+        }
+
+    });
+
+
+    document
+        .querySelectorAll(".mobile-menu a")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                mobileMenu.classList.remove(
+                    "active"
+                );
 
                 menuBtn.textContent = "☰";
 
-            }
-
-        });
-
-
-        document
-            .querySelectorAll(".mobile-menu a")
-            .forEach(link => {
-
-                link.addEventListener("click", () => {
-
-                    mobileMenu.classList.remove(
-                        "active"
-                    );
-
-                    menuBtn.textContent = "☰";
-
-                });
-
             });
 
-    </script>
-
-
-
-    <!-- ================================
-         SCROLL REVEAL
-    ================================= -->
-
-    <script>
-
-        const revealElements =
-            document.querySelectorAll(
-                ".section, .closing, .program-card, .mission-item, .vision-card, .reason-box, .support-section, .share-section"
-            );
-
-
-        revealElements.forEach((element) => {
-
-            element.classList.add("reveal");
-
         });
 
-
-        const revealObserver =
-            new IntersectionObserver(
-                (entries, observer) => {
-
-                    entries.forEach((entry) => {
-
-                        if (entry.isIntersecting) {
-
-                            entry.target.classList.add(
-                                "show"
-                            );
-
-                            observer.unobserve(
-                                entry.target
-                            );
-
-                        }
-
-                    });
-
-                },
-                {
-                    threshold: 0.12
-                }
-            );
-
-
-        revealElements.forEach((element) => {
-
-            revealObserver.observe(element);
-
-        });
-
-    </script>
+</script>
 
 
 
-    <!-- ================================
-         QR CODE + SHARE
-    ================================= -->
+<!-- =========================================
+     SCROLL REVEAL
+========================================== -->
 
-    <script>
+<script>
 
-        const websiteURL =
-            "https://darooo14.github.io/KETOS-WEB-Azriel/";
-
-
-        /* =====================================
-           QR CODE
-        ===================================== */
-
-        new QRCode(
-            document.getElementById("qrcode"),
-            {
-                text: websiteURL,
-                width: 220,
-                height: 220,
-                correctLevel:
-                    QRCode.CorrectLevel.H
-            }
+    const revealElements =
+        document.querySelectorAll(
+            ".section, .closing, .program-card, .mission-item, .vision-card, .reason-box, .support-section, .share-section"
         );
 
 
-        /* =====================================
-           SHARE
-        ===================================== */
+    revealElements.forEach(element => {
 
-        const shareButton =
-            document.getElementById(
-                "shareButton"
-            );
+        element.classList.add("reveal");
 
-        const copyMessage =
-            document.getElementById(
-                "copyMessage"
-            );
+    });
 
 
-        shareButton.addEventListener(
-            "click",
-            async () => {
+    const revealObserver =
+        new IntersectionObserver(
+            (entries, observer) => {
 
-                if (navigator.share) {
+                entries.forEach(entry => {
 
-                    try {
+                    if (entry.isIntersecting) {
 
-                        await navigator.share({
-
-                            title:
-                                "Azriel Khalif Raka #4",
-
-                            text:
-                                "Website calon Ketua OSIS SMPIT AN-NAJMA #4",
-
-                            url:
-                                websiteURL
-
-                        });
-
-                    } catch (error) {
-
-                        console.log(
-                            "Share dibatalkan."
-                        );
-
-                    }
-
-                } else {
-
-                    try {
-
-                        await navigator.clipboard.writeText(
-                            websiteURL
-                        );
-
-                        copyMessage.classList.add(
+                        entry.target.classList.add(
                             "show"
                         );
 
-
-                        setTimeout(() => {
-
-                            copyMessage.classList.remove(
-                                "show"
-                            );
-
-                        }, 2500);
-
-                    } catch (error) {
-
-                        alert(
-                            "Silakan copy link website secara manual."
+                        observer.unobserve(
+                            entry.target
                         );
 
                     }
 
-                }
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    revealElements.forEach(element => {
+
+        revealObserver.observe(element);
+
+    });
+
+</script>
+
+
+
+<!-- =========================================
+     SCROLL PROGRESS
+========================================== -->
+
+<script>
+
+    const scrollProgress =
+        document.getElementById(
+            "scrollProgress"
+        );
+
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            const scrollTop =
+                window.scrollY;
+
+
+            const documentHeight =
+                document.documentElement
+                    .scrollHeight -
+                window.innerHeight;
+
+
+            const progress =
+                documentHeight > 0
+                    ? (scrollTop / documentHeight) * 100
+                    : 0;
+
+
+            scrollProgress.style.width =
+                progress + "%";
+
+        },
+        {
+            passive: true
+        }
+    );
+
+</script>
+
+
+
+<!-- =========================================
+     3D TILT
+========================================== -->
+
+<script>
+
+    const tiltCards =
+        document.querySelectorAll(
+            ".tilt-card"
+        );
+
+
+    tiltCards.forEach(card => {
+
+        card.addEventListener(
+            "mousemove",
+            (event) => {
+
+                if (
+                    window.innerWidth <= 768
+                ) return;
+
+
+                const rect =
+                    card.getBoundingClientRect();
+
+
+                const x =
+                    event.clientX -
+                    rect.left;
+
+
+                const y =
+                    event.clientY -
+                    rect.top;
+
+
+                const centerX =
+                    rect.width / 2;
+
+
+                const centerY =
+                    rect.height / 2;
+
+
+                const rotateX =
+                    ((y - centerY) /
+                    centerY) * -5;
+
+
+                const rotateY =
+                    ((x - centerX) /
+                    centerX) * 5;
+
+
+                card.style.transform =
+                    `perspective(900px)
+                     rotateX(${rotateX}deg)
+                     rotateY(${rotateY}deg)
+                     translateY(-5px)`;
 
             }
         );
 
-    </script>
 
+        card.addEventListener(
+            "mouseleave",
+            () => {
+
+                card.style.transform =
+                    "";
+
+            }
+        );
+
+    });
+
+</script>
+
+
+
+<!-- =========================================
+     MAGNETIC BUTTON
+========================================== -->
+
+<script>
+
+    const magneticElements =
+        document.querySelectorAll(
+            ".magnetic"
+        );
+
+
+    magneticElements.forEach(element => {
+
+        element.addEventListener(
+            "mousemove",
+            event => {
+
+                if (
+                    window.innerWidth <= 768
+                ) return;
+
+
+                const rect =
+                    element.getBoundingClientRect();
+
+
+                const x =
+                    event.clientX -
+                    (rect.left + rect.width / 2);
+
+
+                const y =
+                    event.clientY -
+                    (rect.top + rect.height / 2);
+
+
+                element.style.transform =
+                    `translate(${x * .12}px,
+                               ${y * .12}px)`;
+
+            }
+        );
+
+
+        element.addEventListener(
+            "mouseleave",
+            () => {
+
+                element.style.transform =
+                    "";
+
+            }
+        );
+
+    });
+
+</script>
+
+
+
+<!-- =========================================
+     RIPPLE EFFECT
+========================================== -->
+
+<script>
+
+    document
+        .querySelectorAll(".ripple-button")
+        .forEach(button => {
+
+            button.addEventListener(
+                "click",
+                function(event) {
+
+                    const ripple =
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    const rect =
+                        button.getBoundingClientRect();
+
+
+                    const size =
+                        Math.max(
+                            rect.width,
+                            rect.height
+                        );
+
+
+                    ripple.className =
+                        "ripple";
+
+
+                    ripple.style.width =
+                        size + "px";
+
+
+                    ripple.style.height =
+                        size + "px";
+
+
+                    ripple.style.left =
+                        (
+                            event.clientX -
+                            rect.left -
+                            size / 2
+                        ) + "px";
+
+
+                    ripple.style.top =
+                        (
+                            event.clientY -
+                            rect.top -
+                            size / 2
+                        ) + "px";
+
+
+                    button.appendChild(
+                        ripple
+                    );
+
+
+                    setTimeout(() => {
+
+                        ripple.remove();
+
+                    }, 650);
+
+                }
+            );
+
+        });
+
+</script>
+
+
+
+<!-- =========================================
+     MOUSE GLOW
+========================================== -->
+
+<script>
+
+    const floatingGlow =
+        document.getElementById(
+            "floatingGlow"
+        );
+
+
+    document.addEventListener(
+        "mousemove",
+        event => {
+
+            if (
+                window.innerWidth <= 768
+            ) return;
+
+
+            floatingGlow.style.left =
+                event.clientX + "px";
+
+
+            floatingGlow.style.top =
+                event.clientY + "px";
+
+        }
+    );
+
+</script>
+
+
+
+<!-- =========================================
+     QR CODE + SHARE
+========================================== -->
+
+<script>
+
+    const websiteURL =
+        "https://darooo14.github.io/KETOS-WEB-Azriel/";
+
+
+    new QRCode(
+        document.getElementById("qrcode"),
+        {
+            text: websiteURL,
+            width: 220,
+            height: 220,
+            correctLevel:
+                QRCode.CorrectLevel.H
+        }
+    );
+
+
+    const shareButton =
+        document.getElementById(
+            "shareButton"
+        );
+
+
+    const copyMessage =
+        document.getElementById(
+            "copyMessage"
+        );
+
+
+    shareButton.addEventListener(
+        "click",
+        async () => {
+
+            if (navigator.share) {
+
+                try {
+
+                    await navigator.share({
+
+                        title:
+                            "Azriel Khalif Raka #4",
+
+                        text:
+                            "Website calon Ketua OSIS SMPIT AN-NAJMA #4",
+
+                        url:
+                            websiteURL
+
+                    });
+
+                } catch (error) {
+
+                    console.log(
+                        "Share dibatalkan."
+                    );
+
+                }
+
+            } else {
+
+                try {
+
+                    await navigator.clipboard.writeText(
+                        websiteURL
+                    );
+
+
+                    copyMessage.classList.add(
+                        "show"
+                    );
+
+
+                    setTimeout(() => {
+
+                        copyMessage.classList.remove(
+                            "show"
+                        );
+
+                    }, 2500);
+
+                } catch (error) {
+
+                    alert(
+                        "Silakan copy link website secara manual."
+                    );
+
+                }
+
+            }
+
+        }
+    );
+
+</script>
+```
 
 </body>
 
