@@ -2489,3 +2489,99 @@ footer {
         animation: none !important;
     }
 }
+/* =========================================
+   AZRIEL #4 — ANIMATION 4C
+   NAVBAR MOTION
+========================================= */
+
+/* Navbar lebih smooth saat halaman bergerak */
+.navbar {
+    transition:
+        padding .35s ease,
+        background .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+/* Efek depth halus */
+.navbar:hover {
+    background: rgba(245, 245, 245, .92);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .06);
+}
+
+/* Logo sedikit hidup */
+.logo {
+    transition:
+        transform .35s cubic-bezier(.2,.8,.2,1);
+}
+
+.logo:hover {
+    transform: translateY(-2px);
+}
+
+/* Menu link lebih smooth */
+.nav-links a {
+    transition:
+        color .3s ease,
+        transform .3s cubic-bezier(.2,.8,.2,1);
+}
+
+.nav-links a:hover {
+    transform: translateY(-2px);
+}
+
+/* Mobile button */
+.menu-toggle {
+    transition:
+        transform .3s cubic-bezier(.2,.8,.2,1),
+        box-shadow .3s ease;
+}
+
+.menu-toggle:active {
+    transform: scale(.92);
+}
+
+/* Mobile menu item */
+.mobile-menu a {
+    transition:
+        background .3s ease,
+        transform .3s cubic-bezier(.2,.8,.2,1);
+}
+
+.mobile-menu a:active {
+    transform: scale(.97);
+}
+
+/* =========================================
+   📱 MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .navbar:hover {
+        box-shadow: none;
+    }
+
+    .nav-links a:hover {
+        transform: none;
+    }
+
+    .logo:hover {
+        transform: none;
+    }
+}
+
+/* =========================================
+   ♿ REDUCE MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .navbar,
+    .logo,
+    .nav-links a,
+    .menu-toggle,
+    .mobile-menu a {
+        transition: none !important;
+    }
+}
