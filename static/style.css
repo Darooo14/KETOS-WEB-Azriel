@@ -1,2587 +1,749 @@
-/* =========================================
-   AZRIEL #4 — LEVEL 4 PREMIUM MOTION
-========================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
-
-/* =========================
-   RESET
-========================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "DM Sans", sans-serif;
-    background: #f5f5f5;
-    color: #111;
-    overflow-x: hidden;
-    animation: pageEnter 0.8s ease both;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-button {
-    font-family: inherit;
-}
-
-/* =========================
-   PAGE ENTER
-========================= */
-
-@keyframes pageEnter {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-/* =========================
-   POSTER
-========================= */
-
-.poster {
-    width: 100%;
-    padding: 24px 20px 0;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.poster-img {
-    width: min(100%, 900px);
-    border-radius: 24px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.14);
-    animation: posterIn 1s cubic-bezier(.2, .8, .2, 1) both;
-    transition:
-        transform 0.5s cubic-bezier(.2, .8, .2, 1),
-        box-shadow 0.5s ease;
-}
-
-.poster-img:hover {
-    transform: scale(1.015) translateY(-5px);
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
-}
-
-@keyframes posterIn {
-    from {
-        opacity: 0;
-        transform: scale(.94) translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-
-/* =========================
-   NAVBAR
-========================= */
-
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    width: 100%;
-    padding: 18px 7%;
-
-    background: rgba(245, 245, 245, 0.82);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-
-    animation: navIn 0.8s ease both;
-}
-
-@keyframes navIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.logo {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    position: relative;
-}
-
-.logo::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0;
-    height: 2px;
-    background: #111;
-    transition: width 0.4s ease;
-}
-
-.logo:hover::after {
-    width: 100%;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-}
-
-.nav-links a {
-    position: relative;
-    font-size: 0.92rem;
-    font-weight: 500;
-    color: #444;
-    transition: color 0.3s ease;
-}
-
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -8px;
-
-    width: 0;
-    height: 2px;
-
-    background: #111;
-    transform: translateX(-50%);
-    transition: width 0.35s ease;
-}
-
-.nav-links a:hover {
-    color: #111;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-/* =========================
-   MOBILE MENU
-========================= */
-
-.menu-toggle {
-    display: none;
-    width: 42px;
-    height: 42px;
-
-    border: 0;
-    border-radius: 12px;
-    background: #111;
-    color: white;
-
-    cursor: pointer;
-    font-size: 1.2rem;
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.menu-toggle:hover {
-    transform: scale(1.06);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.mobile-menu {
-    display: none;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    position: relative;
-    isolation: isolate;
-
-    min-height: 85vh;
-    padding: 100px 7%;
-
-    display: grid;
-    grid-template-columns: 1.05fr .95fr;
-    align-items: center;
-    gap: 60px;
-
-    overflow: hidden;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-
-    width: 500px;
-    height: 500px;
-
-    top: -180px;
-    left: -150px;
-
-    border-radius: 50%;
-
-    background: radial-gradient(
-        circle,
-        rgba(0, 0, 0, 0.09),
-        transparent 68%
-    );
-
-    filter: blur(20px);
-    z-index: -1;
-
-    animation: heroGlow 7s ease-in-out infinite alternate;
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-
-    width: 420px;
-    height: 420px;
-
-    right: -150px;
-    bottom: -180px;
-
-    border-radius: 50%;
-
-    background: radial-gradient(
-        circle,
-        rgba(0, 0, 0, 0.08),
-        transparent 68%
-    );
-
-    filter: blur(25px);
-    z-index: -1;
-
-    animation: heroGlow 9s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes heroGlow {
-    from {
-        transform: translate3d(0, 0, 0) scale(1);
-    }
-
-    to {
-        transform: translate3d(50px, 30px, 0) scale(1.2);
-    }
-}
-
-.hero-content {
-    animation: heroTextIn 1s cubic-bezier(.2, .8, .2, 1) both;
-}
-
-@keyframes heroTextIn {
-    from {
-        opacity: 0;
-        transform: translateX(-60px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.badge {
-    display: inline-flex;
-    align-items: center;
-
-    padding: 8px 14px;
-    border-radius: 999px;
-
-    background: #111;
-    color: white;
-
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: .08em;
-
-    margin-bottom: 22px;
-
-    animation:
-        badgeIn 0.8s ease both,
-        badgePulse 4s ease-in-out 1s infinite;
-}
-
-@keyframes badgeIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px) scale(.9);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-@keyframes badgePulse {
-    0%, 100% {
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    }
-
-    50% {
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    }
-}
-
-.hero h1 {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: clamp(3rem, 7vw, 6.5rem);
-    line-height: .9;
-    letter-spacing: -.075em;
-    margin-bottom: 28px;
-}
-
-.hero h1 span {
-    display: block;
-    animation: titleReveal 1s cubic-bezier(.2, .8, .2, 1) .15s both;
-}
-
-@keyframes titleReveal {
-    from {
-        opacity: 0;
-        transform: translateY(35px);
-        filter: blur(8px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
-    }
-}
-
-.hero p {
-    max-width: 570px;
-
-    color: #555;
-    font-size: 1.08rem;
-    line-height: 1.8;
-
-    margin-bottom: 34px;
-
-    animation: paragraphIn 1s ease .35s both;
-}
-
-@keyframes paragraphIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* =========================
-   HERO BUTTON
-========================= */
-
-.hero-button,
-.share-button {
-    position: relative;
-    overflow: hidden;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 14px 24px;
-
-    border-radius: 14px;
-
-    background: #111;
-    color: white;
-
-    font-weight: 700;
-
-    transition:
-        transform .35s cubic-bezier(.2, .8, .2, 1),
-        box-shadow .35s ease;
-}
-
-.hero-button::before,
-.share-button::before {
-    content: "";
-
-    position: absolute;
-    top: 0;
-    left: -120%;
-
-    width: 80%;
-    height: 100%;
-
-    background: linear-gradient(
-        110deg,
-        transparent,
-        rgba(255,255,255,.25),
-        transparent
-    );
-
-    transform: skewX(-20deg);
-
-    transition: left .7s ease;
-}
-
-.hero-button:hover::before,
-.share-button:hover::before {
-    left: 140%;
-}
-
-.hero-button:hover,
-.share-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.2);
-}
-
-.hero-button:active,
-.share-button:active {
-    transform: scale(.97);
-}
-
-/* =========================
-   HERO PHOTO
-========================= */
-
-.hero-photo {
-    position: relative;
-    display: flex;
-    justify-content: center;
-
-    animation: heroPhotoIn 1.1s cubic-bezier(.2, .8, .2, 1) .15s both;
-}
-
-@keyframes heroPhotoIn {
-    from {
-        opacity: 0;
-        transform: translateX(60px) scale(.92);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0) scale(1);
-    }
-}
-
-.photo-card {
-    position: relative;
-
-    width: min(100%, 460px);
-
-    transform: rotate(2deg);
-
-    transition:
-        transform .6s cubic-bezier(.2, .8, .2, 1),
-        box-shadow .6s ease;
-
-    filter: drop-shadow(0 25px 45px rgba(0, 0, 0, .15));
-}
-
-.photo-card:hover {
-    transform: rotate(0deg) scale(1.035) translateY(-8px);
-    filter: drop-shadow(0 35px 65px rgba(0, 0, 0, .22));
-}
-
-.photo-card img {
-    position: relative;
-    z-index: 2;
-
-    width: 100%;
-
-    border-radius: 28px;
-
-    border: 8px solid #111;
-
-    background: #111;
-}
-
-.photo-card::after {
-    content: "";
-
-    position: absolute;
-    z-index: 3;
-
-    top: 0;
-    left: -100%;
-
-    width: 55%;
-    height: 100%;
-
-    border-radius: 28px;
-
-    background: linear-gradient(
-        105deg,
-        transparent,
-        rgba(255,255,255,.18),
-        transparent
-    );
-
-    transform: skewX(-15deg);
-
-    pointer-events: none;
-
-    animation: photoShine 6s ease-in-out 2s infinite;
-}
-
-@keyframes photoShine {
-    0%, 55% {
-        left: -100%;
-    }
-
-    75% {
-        left: 150%;
-    }
-
-    100% {
-        left: 150%;
-    }
-}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.photo-glow {
-    position: absolute;
-
-    width: 75%;
-    height: 75%;
-
-    left: 50%;
-    top: 50%;
-
-    transform: translate(-50%, -50%);
-
-    background: rgba(0, 0, 0, .16);
-
-    filter: blur(70px);
-
-    animation: glowMove 5s ease-in-out infinite;
-}
-
-@keyframes glowMove {
-    0%, 100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: .45;
-    }
-
-    50% {
-        transform: translate(-50%, -45%) scale(1.15);
-        opacity: .7;
-    }
-}
-
-.number {
-    position: absolute;
-    z-index: 4;
-
-    right: -30px;
-    bottom: -30px;
+    <title>Azriel Khalif Raka | Calon Ketua OSIS #4</title>
 
-    width: 100px;
-    height: 100px;
+    <meta
+        name="description"
+        content="Profil Azriel Khalif Raka, calon Ketua OSIS SMPIT AN-NAJMA nomor urut 4."
+    >
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    <link rel="stylesheet" href="static/style.css">
 
-    border-radius: 50%;
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    background: #111;
-    color: white;
-
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-
-    box-shadow: 0 20px 40px rgba(0,0,0,.2);
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
 
-    animation: numberFloat 4s ease-in-out infinite;
-}
+<body>
 
-@keyframes numberFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
+    <!-- ================================
+         POSTER
+    ================================= -->
 
-    50% {
-        transform: translateY(-8px);
-    }
-}
+    <section class="poster-section">
 
-/* =========================
-   SECTION
-========================= */
+        <img
+            src="WhatsApp Image 2026-10-03 at 13.44.55.jpeg"
+            alt="Poster Azriel Khalif Raka"
+            class="poster-img"
+        >
 
-.section {
-    position: relative;
-    padding: 110px 7%;
-    overflow: hidden;
-}
+    </section>
 
-.section::after {
-    content: "";
-
-    position: absolute;
 
-    width: 350px;
-    height: 350px;
+    <!-- ================================
+         NAVBAR
+    ================================= -->
 
-    right: -180px;
-    top: 20%;
-
-    border-radius: 50%;
+    <header class="navbar">
 
-    background: radial-gradient(
-        circle,
-        rgba(0,0,0,.055),
-        transparent 70%
-    );
-
-    filter: blur(15px);
+        <div class="nav-container">
 
-    animation: sectionGlow 8s ease-in-out infinite alternate;
-    pointer-events: none;
-}
+            <a href="#home" class="logo">
+                AZRIEL<span>#4</span>
+            </a>
 
-@keyframes sectionGlow {
-    from {
-        transform: translateY(-20px);
-    }
+            <!-- DESKTOP MENU -->
 
-    to {
-        transform: translateY(50px);
-    }
-}
+            <nav class="desktop-nav">
 
-.section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
+                <a href="#profil">Profil</a>
+                <a href="#visi">Visi</a>
+                <a href="#misi">Misi</a>
+                <a href="#program">Program</a>
 
-    font-size: .8rem;
-    font-weight: 700;
-    letter-spacing: .13em;
-    text-transform: uppercase;
+            </nav>
 
-    color: #777;
 
-    margin-bottom: 18px;
-}
+            <!-- MOBILE BUTTON -->
 
-.section-label::before {
-    content: "";
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Buka menu"
+            >
+                ☰
+            </button>
 
-    width: 35px;
-    height: 2px;
 
-    background: #111;
+            <!-- MOBILE MENU -->
 
-    transform-origin: left;
-    animation: labelLine 1s cubic-bezier(.2,.8,.2,1) both;
-}
+            <div
+                class="mobile-menu"
+                id="mobileMenu"
+            >
 
-@keyframes labelLine {
-    from {
-        transform: scaleX(0);
-    }
+                <a href="#profil">Profil</a>
+                <a href="#visi">Visi</a>
+                <a href="#misi">Misi</a>
+                <a href="#program">Program</a>
+                <a href="#dukungan">Dukung Azriel</a>
 
-    to {
-        transform: scaleX(1);
-    }
-}
+            </div>
 
-.section h2 {
-    position: relative;
-    z-index: 1;
+        </div>
 
-    font-family: "Space Grotesk", sans-serif;
+    </header>
 
-    font-size: clamp(2.3rem, 5vw, 4.5rem);
-    line-height: 1;
 
-    letter-spacing: -.06em;
+    <!-- ================================
+         MAIN
+    ================================= -->
 
-    margin-bottom: 35px;
-}
+    <main id="home">
 
-/* =========================
-   DARK SECTION
-========================= */
 
-.dark-section {
-    background: #111;
-    color: white;
-}
+        <!-- ================================
+             HERO
+        ================================= -->
 
-.dark-section::after {
-    background: radial-gradient(
-        circle,
-        rgba(255,255,255,.08),
-        transparent 70%
-    );
-}
+        <section class="hero">
 
-.dark-section .section-label {
-    color: #aaa;
-}
+            <div class="hero-content">
 
-.dark-section .section-label::before {
-    background: white;
-}
+                <div class="badge">
+                    CALON KETUA OSIS
+                </div>
 
-/* =========================
-   PROFILE
-========================= */
+                <p class="school">
+                    SMPIT AN-NAJMA
+                </p>
 
-.profile-content {
-    max-width: 850px;
-}
+                <h1>
+                    AZRIEL<br>
+                    <span>KHALIF RAKA</span>
+                </h1>
 
-.profile-content p {
-    position: relative;
-    z-index: 1;
+                <p class="hero-description">
+                    Calon Ketua OSIS nomor urut
+                    <strong>#4</strong>
+                </p>
 
-    max-width: 800px;
+                <a
+                    href="#profil"
+                    class="hero-button"
+                >
+                    Lihat Profil
+                    <span>↓</span>
+                </a>
 
-    color: #555;
+            </div>
 
-    font-size: 1.12rem;
-    line-height: 1.9;
-}
 
-.dark-section .profile-content p {
-    color: #bbb;
-}
+            <!-- FOTO -->
 
-/* =========================
-   REASON BOX
-========================= */
+            <div class="hero-photo">
 
-.reason-box {
-    position: relative;
-    overflow: hidden;
+                <div class="photo-glow"></div>
 
-    padding: 38px;
+                <div class="photo-card">
 
-    border-radius: 24px;
+                    <img
+                        src="static/images/azriel.png"
+                        alt="Azriel Khalif Raka"
+                    >
 
-    background: white;
+                    <div class="number">
+                        04
+                    </div>
 
-    box-shadow: 0 15px 45px rgba(0,0,0,.07);
+                </div>
 
-    transition:
-        transform .5s cubic-bezier(.2,.8,.2,1),
-        box-shadow .5s ease;
-}
+            </div>
 
-.reason-box::before {
-    content: "";
+        </section>
 
-    position: absolute;
 
-    left: 0;
-    top: 0;
+        <!-- ================================
+             PROFIL
+        ================================= -->
 
-    width: 4px;
-    height: 0;
+        <section
+            id="profil"
+            class="section"
+        >
 
-    background: #111;
+            <div class="section-label">
+                01 — PROFIL
+            </div>
 
-    transition: height .5s ease;
-}
+            <div class="profile-grid">
 
-.reason-box:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 65px rgba(0,0,0,.12);
-}
+                <div>
 
-.reason-box:hover::before {
-    height: 100%;
-}
+                    <h2>
+                        Mengenal<br>
+                        <span>Azriel.</span>
+                    </h2>
 
-.reason-box h3 {
-    margin-bottom: 14px;
+                </div>
 
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 1.4rem;
-}
 
-.reason-box p {
-    color: #666;
-    line-height: 1.8;
-}
+                <div class="profile-text">
 
-/* =========================
-   VISION
-========================= */
+                    <p>
 
-.vision-card {
-    position: relative;
-    overflow: hidden;
+                        <strong>
+                            AZRIEL KHALIF RAKA
+                        </strong>
 
-    padding: 42px;
+                        merupakan calon Ketua OSIS
+                        SMPIT AN-NAJMA dengan nomor
+                        urut <strong>4</strong>.
 
-    border-radius: 28px;
+                    </p>
 
-    background: #fff;
 
-    box-shadow: 0 18px 50px rgba(0,0,0,.07);
+                    <p>
 
-    transition:
-        transform .55s cubic-bezier(.2,.8,.2,1),
-        box-shadow .55s ease;
-}
+                        Pencalonan ini membawa gagasan
+                        mengenai organisasi siswa yang
+                        aktif, kreatif, disiplin,
+                        dan bertanggung jawab.
 
-.vision-card::before {
-    content: "";
+                    </p>
 
-    position: absolute;
+                </div>
 
-    width: 170px;
-    height: 170px;
+            </div>
 
-    right: -80px;
-    top: -80px;
+        </section>
 
-    border-radius: 50%;
 
-    background: rgba(0,0,0,.05);
+        <!-- ================================
+             ALASAN
+        ================================= -->
 
-    transition:
-        transform .6s ease,
-        opacity .6s ease;
-}
+        <section class="section dark-section">
 
-.vision-card::after {
-    content: "";
+            <div class="section-label">
+                02 — ALASAN
+            </div>
 
-    position: absolute;
 
-    left: -100%;
-    bottom: 0;
+            <div class="reason-box">
 
-    width: 70%;
-    height: 2px;
+                <div class="quote-mark">
+                    “
+                </div>
 
-    background: #111;
+                <h2>
+                    Alasan Menjadi<br>
+                    Ketua OSIS
+                </h2>
 
-    transition: left .7s cubic-bezier(.2,.8,.2,1);
-}
+                <p>
 
-.vision-card:hover {
-    transform: translateY(-10px) scale(1.01);
-    box-shadow: 0 30px 75px rgba(0,0,0,.13);
-}
+                    Membuat sebuah wadah bagi siswa
+                    untuk mengembangkan bakat, minat,
+                    dan kreativitas, serta untuk melatih
+                    jiwa kepemimpinan, tanggung jawab,
+                    dan kemandirian.
 
-.vision-card:hover::before {
-    transform: scale(1.8);
-    opacity: .7;
-}
+                </p>
 
-.vision-card:hover::after {
-    left: 0;
-}
+            </div>
 
-.vision-card h3 {
-    position: relative;
-    z-index: 2;
+        </section>
 
-    font-family: "Space Grotesk", sans-serif;
 
-    font-size: 1.7rem;
+        <!-- ================================
+             VISI
+        ================================= -->
 
-    margin-bottom: 16px;
-}
+        <section
+            id="visi"
+            class="section"
+        >
 
-.vision-card p {
-    position: relative;
-    z-index: 2;
+            <div class="section-label">
+                03 — VISI
+            </div>
 
-    color: #666;
-    line-height: 1.8;
-}
 
-/* =========================
-   MISSION
-========================= */
+            <div class="vision-card">
 
-.mission-list {
-    display: grid;
-    gap: 16px;
-}
+                <div class="vision-number">
+                    V
+                </div>
 
-.mission-item {
-    position: relative;
-    overflow: hidden;
 
-    display: grid;
-    grid-template-columns: 70px 1fr;
-    gap: 25px;
+                <div>
 
-    padding: 25px;
+                    <h2>
+                        Visi
+                    </h2>
 
-    border-radius: 20px;
+                    <p>
 
-    background: rgba(255,255,255,.06);
+                        “Mewujudkan OSSA yang aktif,
+                        kreatif, disiplin, dan
+                        bertanggung jawab dalam
+                        membangun sekolah yang lebih
+                        maju, nyaman, dan penuh prestasi.”
 
-    border: 1px solid rgba(255,255,255,.08);
+                    </p>
 
-    transition:
-        transform .45s cubic-bezier(.2,.8,.2,1),
-        background .45s ease,
-        border-color .45s ease;
-}
+                </div>
 
-.mission-item::after {
-    content: "";
+            </div>
 
-    position: absolute;
+        </section>
 
-    left: 0;
-    top: 0;
 
-    width: 0;
-    height: 100%;
+        <!-- ================================
+             MISI
+        ================================= -->
 
-    background: rgba(255,255,255,.04);
+        <section
+            id="misi"
+            class="section dark-section"
+        >
 
-    transition: width .5s ease;
-}
+            <div class="section-label">
+                04 — MISI
+            </div>
 
-.mission-item:hover {
-    transform: translateX(8px);
-    background: rgba(255,255,255,.1);
-    border-color: rgba(255,255,255,.18);
-}
 
-.mission-item:hover::after {
-    width: 100%;
-}
+            <h2 class="section-title">
+                Misi
+            </h2>
 
-.mission-number {
-    position: relative;
-    z-index: 2;
 
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: white;
-}
+            <div class="mission-list">
 
-.mission-item h3,
-.mission-item p {
-    position: relative;
-    z-index: 2;
-}
 
-.mission-item h3 {
-    margin-bottom: 7px;
-}
+                <!-- MISI 01 -->
 
-.mission-item p {
-    color: #aaa;
-    line-height: 1.7;
-}
+                <article class="mission-item">
 
-/* =========================
-   PROGRAM
-========================= */
+                    <span>
+                        01
+                    </span>
 
-.program-grid {
-    display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+                    <div>
 
-    gap: 20px;
-}
+                        <h3>
+                            Keaktifan Siswa
+                        </h3>
 
-.program-card {
-    position: relative;
-    overflow: hidden;
+                        <p>
 
-    padding: 32px;
+                            Meningkatkan keaktifan siswa
+                            dalam kegiatan sekolah serta
+                            mengembangkan bakat dan minat.
 
-    border-radius: 24px;
+                        </p>
 
-    background: white;
+                    </div>
 
-    box-shadow: 0 15px 45px rgba(0,0,0,.06);
+                </article>
 
-    transition:
-        transform .5s cubic-bezier(.2,.8,.2,1),
-        box-shadow .5s ease;
-}
 
-.program-card::before {
-    content: "";
+                <!-- MISI 02 -->
 
-    position: absolute;
+                <article class="mission-item">
 
-    left: 0;
-    top: 0;
+                    <span>
+                        02
+                    </span>
 
-    width: 100%;
-    height: 4px;
 
-    background: #111;
+                    <div>
 
-    transform: scaleX(0);
-    transform-origin: left;
+                        <h3>
+                            Program yang Bermanfaat
+                        </h3>
 
-    transition: transform .5s ease;
-}
+                        <p>
 
-.program-card::after {
-    content: "";
+                            Menciptakan program OSSA
+                            yang menarik dan bermanfaat
+                            bagi seluruh siswa.
 
-    position: absolute;
+                        </p>
 
-    top: -100%;
-    left: -50%;
+                    </div>
 
-    width: 40%;
-    height: 300%;
+                </article>
 
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(0,0,0,.06),
-        transparent
-    );
 
-    transform: rotate(25deg);
+                <!-- MISI 03 -->
 
-    transition: left .8s ease;
-}
+                <article class="mission-item">
 
-.program-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 70px rgba(0,0,0,.12);
-}
+                    <span>
+                        03
+                    </span>
 
-.program-card:hover::before {
-    transform: scaleX(1);
-}
 
-.program-card:hover::after {
-    left: 130%;
-}
+                    <div>
 
-.program-card h3 {
-    position: relative;
-    z-index: 2;
+                        <h3>
+                            Disiplin & Tanggung Jawab
+                        </h3>
 
-    font-family: "Space Grotesk", sans-serif;
+                        <p>
 
-    font-size: 1.35rem;
+                            Menumbuhkan sikap disiplin,
+                            tanggung jawab, dan kepedulian
+                            antar warga sekolah.
 
-    margin-bottom: 12px;
-}
+                        </p>
 
-.program-card p {
-    position: relative;
-    z-index: 2;
+                    </div>
 
-    color: #666;
-    line-height: 1.75;
-}
+                </article>
 
-/* =========================
-   SUPPORT
-========================= */
 
-.support-section {
-    position: relative;
-    overflow: hidden;
+            </div>
 
-    padding: 110px 7%;
+        </section>
 
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(0,0,0,.07),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 80% 80%,
-            rgba(0,0,0,.07),
-            transparent 30%
-        ),
-        #f5f5f5;
-}
 
-.support-section::before {
-    content: "";
+        <!-- ================================
+             PROGRAM
+        ================================= -->
 
-    position: absolute;
+        <section
+            id="program"
+            class="section"
+        >
 
-    width: 500px;
-    height: 500px;
+            <div class="section-label">
+                05 — PROGRAM KERJA
+            </div>
 
-    left: 50%;
-    top: 50%;
 
-    transform: translate(-50%, -50%);
+            <h2 class="section-title">
+                Program Kerja
+            </h2>
 
-    border-radius: 50%;
 
-    border: 1px solid rgba(0,0,0,.06);
+            <div class="program-grid">
 
-    animation: supportRing 8s ease-in-out infinite;
-}
 
-@keyframes supportRing {
-    0%, 100% {
-        transform: translate(-50%, -50%) scale(.9);
-        opacity: .3;
-    }
+                <!-- PROGRAM 01 -->
 
-    50% {
-        transform: translate(-50%, -50%) scale(1.1);
-        opacity: .7;
-    }
-}
+                <article class="program-card">
 
-.support-thanks {
-    position: relative;
-    z-index: 2;
+                    <span class="program-number">
+                        01
+                    </span>
 
-    max-width: 800px;
-    margin: auto;
+                    <h3>
+                        Kebersihan & Kenyamanan
+                    </h3>
 
-    padding: 55px 35px;
+                    <p>
 
-    text-align: center;
+                        Mengadakan kegiatan kebersihan
+                        dan menjaga kenyamanan lingkungan
+                        sekolah.
 
-    background: #111;
-    color: white;
+                    </p>
 
-    border-radius: 32px;
+                </article>
 
-    box-shadow: 0 30px 80px rgba(0,0,0,.2);
 
-    animation: thanksFloat 4s ease-in-out infinite;
-}
+                <!-- PROGRAM 02 -->
 
-.support-thanks::before {
-    content: "";
+                <article class="program-card">
 
-    position: absolute;
-    inset: -2px;
+                    <span class="program-number">
+                        02
+                    </span>
 
-    border-radius: 34px;
+                    <h3>
+                        Bakat & Kreativitas
+                    </h3>
 
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,.12),
-        transparent
-    );
+                    <p>
 
-    opacity: .5;
+                        Membuat kegiatan yang mendukung
+                        bakat dan kreativitas siswa.
 
-    pointer-events: none;
+                    </p>
 
-    animation: thanksShine 5s ease-in-out infinite;
-}
+                </article>
 
-@keyframes thanksShine {
-    0%, 60% {
-        transform: translateX(-100%);
-    }
 
-    100% {
-        transform: translateX(100%);
-    }
-}
+                <!-- PROGRAM 03 -->
 
-@keyframes thanksFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
+                <article class="program-card">
 
-    50% {
-        transform: translateY(-8px);
-    }
-}
+                    <span class="program-number">
+                        03
+                    </span>
 
-.thanks-icon {
-    position: relative;
-    z-index: 2;
+                    <h3>
+                        OSSA Mendengar Aspirasi
+                    </h3>
 
-    font-size: 3rem;
+                    <p>
 
-    margin-bottom: 20px;
+                        Menampung saran dan masukan
+                        siswa untuk menciptakan sekolah
+                        yang lebih baik.
 
-    animation: thanksBounce 2s ease-in-out infinite;
-}
+                    </p>
 
-@keyframes thanksBounce {
-    0%, 100% {
-        transform: translateY(0) rotate(0);
-    }
+                </article>
 
-    50% {
-        transform: translateY(-8px) rotate(3deg);
-    }
-}
 
-.support-thanks h3 {
-    position: relative;
-    z-index: 2;
+            </div>
 
-    font-family: "Space Grotesk", sans-serif;
+        </section>
 
-    font-size: clamp(2rem, 5vw, 3.5rem);
 
-    margin-bottom: 15px;
-}
+        <!-- ================================
+             DUKUNG AZRIEL
+        ================================= -->
 
-.support-thanks p {
-    position: relative;
-    z-index: 2;
+        <section
+            id="dukungan"
+            class="support-section"
+        >
 
-    max-width: 580px;
-    margin: auto;
+            <div class="support-content">
 
-    color: #aaa;
+                <div class="section-label">
+                    06 — DUKUNGAN
+                </div>
 
-    line-height: 1.8;
-}
 
-.support-number {
-    position: relative;
-    z-index: 2;
+                <h2>
+                    Dukung<br>
+                    <span>Azriel #4.</span>
+                </h2>
 
-    margin-top: 25px;
 
-    font-family: "Space Grotesk", sans-serif;
+                <p>
 
-    font-size: 4rem;
-    font-weight: 700;
+                    Dukung semangat dan gagasan Azriel
+                    untuk OSIS SMPIT AN-NAJMA.
 
-    opacity: .9;
+                </p>
 
-    animation: supportNumber 3s ease-in-out infinite;
-}
 
-@keyframes supportNumber {
-    0%, 100% {
-        transform: scale(1);
-        opacity: .85;
-    }
+                <button
+                    class="support-button"
+                    id="supportButton"
+                >
+                    ❤️ Dukung Azriel #4
+                </button>
 
-    50% {
-        transform: scale(1.06);
-        opacity: 1;
-    }
-}
 
-/* =========================
-   SHARE
-========================= */
+                <div
+                    class="support-message"
+                    id="supportMessage"
+                >
+                    Terima kasih atas dukungannya! 🙌
+                </div>
 
-.share-section {
-    position: relative;
-    overflow: hidden;
+            </div>
 
-    padding: 110px 7%;
+        </section>
 
-    text-align: center;
 
-    background: #111;
-    color: white;
-}
+        <!-- ================================
+             PENUTUP
+        ================================= -->
 
-.share-section::before {
-    content: "";
+        <section class="closing">
 
-    position: absolute;
+            <div class="closing-content">
 
-    width: 550px;
-    height: 550px;
+                <div class="closing-number">
+                    #04
+                </div>
 
-    left: 50%;
-    top: 50%;
 
-    transform: translate(-50%, -50%);
+                <h2>
+                    AZRIEL<br>
+                    <span>KHALIF RAKA</span>
+                </h2>
 
-    border-radius: 50%;
 
-    background: radial-gradient(
-        circle,
-        rgba(255,255,255,.08),
-        transparent 68%
-    );
+                <p>
+                    Calon Ketua OSIS SMPIT AN-NAJMA
+                </p>
 
-    animation: shareGlow 6s ease-in-out infinite alternate;
-}
+            </div>
 
-@keyframes shareGlow {
-    from {
-        transform: translate(-50%, -50%) scale(.85);
-    }
+        </section>
 
-    to {
-        transform: translate(-50%, -50%) scale(1.15);
-    }
-}
 
-.share-section > * {
-    position: relative;
-    z-index: 2;
-}
+    </main>
 
-.share-section h2 {
-    margin-bottom: 15px;
-}
 
-.share-section p {
-    color: #aaa;
-    margin-bottom: 35px;
-}
+    <!-- ================================
+         FOOTER
+    ================================= -->
 
-.qr-card {
-    position: relative;
-    overflow: hidden;
+    <footer>
 
-    width: fit-content;
+        <p>
+            AZRIEL KHALIF RAKA · CALON KETUA OSIS #4
+        </p>
 
-    margin: 0 auto 30px;
+        <p>
+            SMPIT AN-NAJMA
+        </p>
 
-    padding: 20px;
+    </footer>
 
-    background: white;
 
-    border-radius: 24px;
+    <!-- ================================
+         SCRIPT HAMBURGER
+    ================================= -->
 
-    box-shadow: 0 20px 50px rgba(0,0,0,.3);
+    <script>
 
-    transition:
-        transform .5s cubic-bezier(.2,.8,.2,1),
-        box-shadow .5s ease;
-}
+        const menuBtn =
+            document.getElementById("menuBtn");
 
-.qr-card::before {
-    content: "";
+        const mobileMenu =
+            document.getElementById("mobileMenu");
 
-    position: absolute;
 
-    inset: -20px;
+        menuBtn.addEventListener("click", () => {
 
-    border: 1px solid rgba(255,255,255,.2);
+            mobileMenu.classList.toggle("active");
 
-    border-radius: 35px;
 
-    animation: qrPulse 3s ease-in-out infinite;
-}
+            if (
+                mobileMenu.classList.contains("active")
+            ) {
 
-@keyframes qrPulse {
-    0%, 100% {
-        transform: scale(.95);
-        opacity: .2;
-    }
+                menuBtn.textContent = "✕";
 
-    50% {
-        transform: scale(1.05);
-        opacity: .7;
-    }
-}
+            } else {
 
-.qr-card:hover {
-    transform: translateY(-8px) scale(1.025);
-    box-shadow: 0 30px 70px rgba(0,0,0,.4);
-}
+                menuBtn.textContent = "☰";
 
-/* =========================
-   CLOSING
-========================= */
+            }
 
-.closing {
-    position: relative;
-    overflow: hidden;
+        });
 
-    min-height: 70vh;
 
-    padding: 100px 7%;
+        document
+            .querySelectorAll(".mobile-menu a")
+            .forEach(link => {
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+                link.addEventListener("click", () => {
 
-    text-align: center;
+                    mobileMenu.classList.remove(
+                        "active"
+                    );
 
-    background: #f5f5f5;
-}
+                    menuBtn.textContent = "☰";
 
-.closing::before {
-    content: "#4";
+                });
 
-    position: absolute;
+            });
 
-    left: 50%;
-    top: 50%;
+    </script>
 
-    transform: translate(-50%, -50%);
 
-    font-family: "Space Grotesk", sans-serif;
+    <!-- ================================
+         SCRIPT SCROLL REVEAL
+    ================================= -->
 
-    font-size: min(50vw, 500px);
+    <script>
 
-    font-weight: 700;
+        const revealElements =
+            document.querySelectorAll(
+                ".section, .closing, .program-card, .mission-item, .vision-card, .reason-box, .support-section"
+            );
 
-    color: rgba(0,0,0,.035);
 
-    white-space: nowrap;
+        revealElements.forEach((element) => {
 
-    animation: closingNumber 8s ease-in-out infinite alternate;
-}
+            element.classList.add("reveal");
 
-@keyframes closingNumber {
-    from {
-        transform: translate(-50%, -50%) scale(.95);
-    }
+        });
 
-    to {
-        transform: translate(-50%, -50%) scale(1.05);
-    }
-}
 
-.closing::after {
-    content: "";
+        const revealObserver =
+            new IntersectionObserver(
+                (entries, observer) => {
 
-    position: absolute;
+                    entries.forEach((entry) => {
 
-    width: 450px;
-    height: 450px;
+                        if (entry.isIntersecting) {
 
-    border-radius: 50%;
+                            entry.target.classList.add(
+                                "show"
+                            );
 
-    background: radial-gradient(
-        circle,
-        rgba(0,0,0,.07),
-        transparent 70%
-    );
+                            observer.unobserve(
+                                entry.target
+                            );
 
-    filter: blur(20px);
+                        }
 
-    animation: closingGlow 7s ease-in-out infinite alternate;
-}
+                    });
 
-@keyframes closingGlow {
-    from {
-        transform: translate(-120px, 30px);
-    }
+                },
+                {
+                    threshold: 0.12
+                }
+            );
 
-    to {
-        transform: translate(120px, -30px);
-    }
-}
 
-.closing-content {
-    position: relative;
-    z-index: 2;
+        revealElements.forEach((element) => {
 
-    max-width: 800px;
-}
+            revealObserver.observe(element);
 
-.closing h2 {
-    font-family: "Space Grotesk", sans-serif;
+        });
 
-    font-size: clamp(3rem, 8vw, 7rem);
+    </script>
 
-    line-height: .9;
-    letter-spacing: -.08em;
 
-    margin-bottom: 25px;
-}
+    <!-- ================================
+         SCRIPT DUKUNGAN
+    ================================= -->
 
-.closing p {
-    color: #666;
+    <script>
 
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
+        const supportButton =
+            document.getElementById(
+                "supportButton"
+            );
 
-/* =========================
-   FOOTER
-========================= */
 
-footer {
-    padding: 30px 7%;
+        const supportMessage =
+            document.getElementById(
+                "supportMessage"
+            );
 
-    background: #111;
-    color: #888;
 
-    text-align: center;
+        supportButton.addEventListener(
+            "click",
+            () => {
 
-    font-size: .85rem;
-}
+                supportMessage.classList.add(
+                    "show"
+                );
 
-/* =========================
-   SCROLL REVEAL
-========================= */
+                supportButton.textContent =
+                    "❤️ Terima kasih!";
 
-.reveal {
-    opacity: 0;
-    transform: translateY(45px);
+            }
+        );
 
-    transition:
-        opacity .9s cubic-bezier(.2,.8,.2,1),
-        transform .9s cubic-bezier(.2,.8,.2,1);
-}
+    </script>
 
-.reveal.show {
-    opacity: 1;
-    transform: translateY(0);
-}
 
-/* =========================
-   STAGGER EFFECT
-========================= */
-
-.program-card:nth-child(1) {
-    transition-delay: .05s;
-}
-
-.program-card:nth-child(2) {
-    transition-delay: .12s;
-}
-
-.program-card:nth-child(3) {
-    transition-delay: .19s;
-}
-
-.program-card:nth-child(4) {
-    transition-delay: .26s;
-}
-
-.program-card:nth-child(5) {
-    transition-delay: .33s;
-}
-
-.program-card:nth-child(6) {
-    transition-delay: .40s;
-}
-
-.mission-item:nth-child(1) {
-    transition-delay: .05s;
-}
-
-.mission-item:nth-child(2) {
-    transition-delay: .12s;
-}
-
-.mission-item:nth-child(3) {
-    transition-delay: .19s;
-}
-
-.mission-item:nth-child(4) {
-    transition-delay: .26s;
-}
-
-.mission-item:nth-child(5) {
-    transition-delay: .33s;
-}
-
-/* =========================
-   SELECTION
-========================= */
-
-::selection {
-    background: #111;
-    color: white;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 900px) {
-
-    .hero {
-        grid-template-columns: 1fr;
-        padding-top: 70px;
-        text-align: center;
-    }
-
-    .hero-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero p {
-        max-width: 650px;
-    }
-
-    .hero-photo {
-        margin-top: 20px;
-    }
-
-    .program-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .nav-links {
-        gap: 18px;
-    }
-}
-
-@media (max-width: 700px) {
-
-    .navbar {
-        padding: 15px 5%;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .menu-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .mobile-menu {
-        position: fixed;
-
-        top: 72px;
-        left: 5%;
-        right: 5%;
-
-        z-index: 999;
-
-        padding: 15px;
-
-        background: rgba(255,255,255,.94);
-
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-
-        border: 1px solid rgba(0,0,0,.08);
-
-        border-radius: 20px;
-
-        box-shadow: 0 25px 60px rgba(0,0,0,.15);
-
-        animation: mobileMenuIn .35s ease both;
-    }
-
-    .mobile-menu.active {
-        display: block;
-    }
-
-    .mobile-menu a {
-        display: block;
-
-        padding: 15px;
-
-        border-radius: 12px;
-
-        font-weight: 600;
-
-        transition:
-            background .25s ease,
-            transform .25s ease;
-    }
-
-    .mobile-menu a:hover {
-        background: #f0f0f0;
-        transform: translateX(5px);
-    }
-
-    @keyframes mobileMenuIn {
-        from {
-            opacity: 0;
-            transform: translateY(-12px) scale(.97);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-    }
-
-    .poster {
-        padding: 15px 12px 0;
-    }
-
-    .poster-img {
-        border-radius: 18px;
-    }
-
-    .hero {
-        min-height: auto;
-
-        padding: 75px 5% 90px;
-
-        gap: 45px;
-    }
-
-    .hero h1 {
-        font-size: clamp(3rem, 15vw, 5rem);
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .photo-card {
-        width: min(90%, 400px);
-    }
-
-    .number {
-        right: -10px;
-        bottom: -15px;
-
-        width: 75px;
-        height: 75px;
-
-        font-size: 1.5rem;
-    }
-
-    .section,
-    .support-section,
-    .share-section {
-        padding: 80px 5%;
-    }
-
-    .section h2 {
-        font-size: 2.7rem;
-    }
-
-    .program-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .program-card {
-        padding: 28px;
-    }
-
-    .mission-item {
-        grid-template-columns: 50px 1fr;
-        gap: 15px;
-        padding: 22px;
-    }
-
-    .mission-number {
-        font-size: 1.5rem;
-    }
-
-    .vision-card {
-        padding: 30px;
-    }
-
-    .reason-box {
-        padding: 28px;
-    }
-
-    .support-thanks {
-        padding: 45px 24px;
-        border-radius: 25px;
-    }
-
-    .support-number {
-        font-size: 3rem;
-    }
-
-    .closing {
-        min-height: 60vh;
-        padding: 80px 5%;
-    }
-
-    .closing h2 {
-        font-size: clamp(3rem, 14vw, 5rem);
-    }
-
-    .closing::before {
-        font-size: 65vw;
-    }
-}
-
-/* =========================
-   SMALL PHONE
-========================= */
-
-@media (max-width: 420px) {
-
-    .hero {
-        padding-left: 4%;
-        padding-right: 4%;
-    }
-
-    .hero h1 {
-        font-size: 3.2rem;
-    }
-
-    .hero-button,
-    .share-button {
-        width: 100%;
-        max-width: 280px;
-    }
-
-    .photo-card {
-        width: 92%;
-    }
-
-    .section h2 {
-        font-size: 2.4rem;
-    }
-
-    .support-thanks h3 {
-        font-size: 2rem;
-    }
-
-    .thanks-icon {
-        font-size: 2.5rem;
-    }
-}
-
-/* =========================
-   REDUCED MOTION
-========================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
-    }
-
-    .reveal {
-        opacity: 1 !important;
-        transform: none !important;
-    }
-}
-/* =========================================
-   AZRIEL #4 — ANIMATION UPGRADE 4A
-   TAMPILAN LAMA TETAP
-========================================= */
-
-/* Smooth semua interaksi */
-.program-card,
-.mission-item,
-.vision-card,
-.reason-box,
-.qr-card,
-.support-thanks,
-.hero-button,
-.share-button {
-    transition:
-        transform 0.45s cubic-bezier(.2,.8,.2,1),
-        box-shadow 0.45s ease,
-        background 0.35s ease;
-}
-
-
-/* =========================================
-   ✨ CARD SHINE
-========================================= */
-
-.program-card,
-.vision-card,
-.reason-box {
-    position: relative;
-    overflow: hidden;
-}
-
-.program-card::after,
-.vision-card::after,
-.reason-box::after {
-    content: "";
-
-    position: absolute;
-    top: -80%;
-    left: -120%;
-
-    width: 55%;
-    height: 260%;
-
-    background: linear-gradient(
-        100deg,
-        transparent,
-        rgba(255,255,255,.35),
-        transparent
-    );
-
-    transform: rotate(20deg);
-
-    pointer-events: none;
-
-    transition: left .8s ease;
-}
-
-.program-card:hover::after,
-.vision-card:hover::after,
-.reason-box:hover::after {
-    left: 150%;
-}
-
-
-/* =========================================
-   🎯 BUTTON PRESS
-========================================= */
-
-.hero-button:active,
-.share-button:active {
-    transform: scale(.96);
-}
-
-
-/* =========================================
-   💫 FOTO — GLOW LEBIH HIDUP
-========================================= */
-
-.photo-glow {
-    animation:
-        glowMove 5s ease-in-out infinite,
-        glowPulse 4s ease-in-out infinite;
-}
-
-@keyframes glowPulse {
-    0%, 100% {
-        opacity: .45;
-        filter: blur(70px);
-    }
-
-    50% {
-        opacity: .65;
-        filter: blur(82px);
-    }
-}
-
-
-/* =========================================
-   🖼️ FOTO HOVER
-========================================= */
-
-.photo-card {
-    transition:
-        transform .55s cubic-bezier(.2,.8,.2,1),
-        filter .55s ease;
-}
-
-.photo-card:hover {
-    transform: rotate(0deg) scale(1.035) translateY(-8px);
-
-    filter:
-        drop-shadow(0 30px 55px rgba(0,0,0,.2));
-}
-
-
-/* =========================================
-   🌊 MISSION HOVER
-========================================= */
-
-.mission-item {
-    transition:
-        transform .4s cubic-bezier(.2,.8,.2,1),
-        background .4s ease,
-        border-color .4s ease;
-}
-
-.mission-item:hover {
-    transform: translateX(7px);
-}
-
-
-/* =========================================
-   ✨ PROGRAM CARD HOVER
-========================================= */
-
-.program-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 22px 50px rgba(0,0,0,.10);
-}
-
-
-/* =========================================
-   👁️ VISION CARD HOVER
-========================================= */
-
-.vision-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 22px 50px rgba(0,0,0,.10);
-}
-
-
-/* =========================================
-   📦 REASON BOX HOVER
-========================================= */
-
-.reason-box:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 45px rgba(0,0,0,.10);
-}
-
-
-/* =========================================
-   🙌 SUPPORT CARD
-========================================= */
-
-.support-thanks {
-    animation: thanksFloat 4s ease-in-out infinite;
-}
-
-.support-thanks:hover {
-    transform: translateY(-5px);
-}
-
-
-/* =========================================
-   ❤️ THANK YOU ICON
-========================================= */
-
-.thanks-icon {
-    animation:
-        thanksBounce 2s ease-in-out infinite;
-}
-
-
-/* =========================================
-   🔳 QR CARD
-========================================= */
-
-.qr-card {
-    transition:
-        transform .45s cubic-bezier(.2,.8,.2,1),
-        box-shadow .45s ease;
-}
-
-.qr-card:hover {
-    transform: translateY(-7px) scale(1.015);
-    box-shadow: 0 25px 55px rgba(0,0,0,.16);
-}
-
-
-/* =========================================
-   📜 SCROLL REVEAL — LEBIH SMOOTH
-========================================= */
-
-.reveal {
-    opacity: 0;
-
-    transform:
-        translateY(28px)
-        scale(.985);
-
-    filter: blur(3px);
-
-    transition:
-        opacity .8s ease,
-        transform .8s cubic-bezier(.2,.8,.2,1),
-        filter .8s ease;
-}
-
-.reveal.show {
-    opacity: 1;
-
-    transform:
-        translateY(0)
-        scale(1);
-
-    filter: blur(0);
-}
-
-
-/* =========================================
-   📱 MOBILE — TETAP RINGAN
-========================================= */
-
-@media (max-width: 700px) {
-
-    .program-card:hover,
-    .vision-card:hover,
-    .reason-box:hover,
-    .qr-card:hover {
-        transform: translateY(-4px);
-    }
-
-    .mission-item:hover {
-        transform: translateX(3px);
-    }
-
-    .photo-card:hover {
-        transform: rotate(0deg) scale(1.015);
-    }
-}
-
-
-/* =========================================
-   ♿ REDUCE MOTION
-========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .photo-glow,
-    .support-thanks,
-    .thanks-icon {
-        animation: none !important;
-    }
-
-    .reveal {
-        opacity: 1 !important;
-        transform: none !important;
-        filter: none !important;
-    }
-}
-/* =========================================
-   AZRIEL #4 — ANIMATION 4B
-   CINEMATIC MOTION
-========================================= */
-
-
-/* =========================================
-   🎬 SECTION MASUK LEBIH CINEMATIC
-========================================= */
-
-.section.reveal,
-.closing.reveal,
-.support-section.reveal,
-.share-section.reveal {
-    transform:
-        translateY(35px)
-        scale(.99);
-
-    filter: blur(2px);
-}
-
-.section.reveal.show,
-.closing.reveal.show,
-.support-section.reveal.show,
-.share-section.reveal.show {
-    transform:
-        translateY(0)
-        scale(1);
-
-    filter: blur(0);
-}
-
-
-/* =========================================
-   ✨ JUDUL SECTION
-========================================= */
-
-.section h2 {
-    overflow: hidden;
-}
-
-.section h2::after {
-    content: "";
-
-    display: block;
-
-    width: 55px;
-    height: 3px;
-
-    margin-top: 18px;
-
-    background: #111;
-
-    transform: scaleX(0);
-    transform-origin: left;
-
-    transition:
-        transform .7s cubic-bezier(.2,.8,.2,1);
-}
-
-.dark-section h2::after,
-.share-section h2::after {
-    background: white;
-}
-
-.reveal.show h2::after {
-    transform: scaleX(1);
-}
-
-
-/* =========================================
-   🔢 NOMOR #4
-========================================= */
-
-.number {
-    animation:
-        numberFloat 4s ease-in-out infinite,
-        numberGlow 4s ease-in-out infinite;
-}
-
-@keyframes numberGlow {
-
-    0%, 100% {
-        box-shadow:
-            0 20px 40px rgba(0,0,0,.20);
-    }
-
-    50% {
-        box-shadow:
-            0 25px 55px rgba(0,0,0,.28);
-    }
-}
-
-
-/* =========================================
-   💡 HERO BUTTON SHINE OTOMATIS
-========================================= */
-
-.hero-button::after,
-.share-button::after {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -120%;
-
-    width: 45%;
-    height: 100%;
-
-    background: linear-gradient(
-        100deg,
-        transparent,
-        rgba(255,255,255,.22),
-        transparent
-    );
-
-    transform: skewX(-20deg);
-
-    animation: buttonShine 5s ease-in-out infinite;
-
-    pointer-events: none;
-}
-
-@keyframes buttonShine {
-
-    0%, 65% {
-        left: -120%;
-    }
-
-    80% {
-        left: 140%;
-    }
-
-    100% {
-        left: 140%;
-    }
-}
-
-
-/* =========================================
-   🖼️ HERO PHOTO — FLOAT HALUS
-========================================= */
-
-.hero-photo {
-    animation:
-        heroPhotoIn 1.1s cubic-bezier(.2,.8,.2,1) .15s both,
-        heroPhotoFloat 6s ease-in-out 1.3s infinite;
-}
-
-@keyframes heroPhotoFloat {
-
-    0%, 100% {
-        margin-top: 0;
-    }
-
-    50% {
-        margin-top: -7px;
-    }
-}
-
-
-/* =========================================
-   🙌 SUPPORT — GLOW HALUS
-========================================= */
-
-.support-thanks {
-    position: relative;
-}
-
-.support-thanks::after {
-    content: "";
-
-    position: absolute;
-
-    width: 220px;
-    height: 220px;
-
-    left: 50%;
-    top: 50%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background: rgba(255,255,255,.035);
-
-    filter: blur(35px);
-
-    animation: supportGlow 4s ease-in-out infinite;
-
-    pointer-events: none;
-}
-
-@keyframes supportGlow {
-
-    0%, 100% {
-        transform:
-            translate(-50%, -50%)
-            scale(.8);
-
-        opacity: .4;
-    }
-
-    50% {
-        transform:
-            translate(-50%, -50%)
-            scale(1.2);
-
-        opacity: .8;
-    }
-}
-
-
-/* =========================================
-   🎯 PROGRAM CARD — ICONLESS MICRO MOTION
-========================================= */
-
-.program-card:hover h3 {
-    transform: translateX(4px);
-}
-
-.program-card h3 {
-    transition:
-        transform .35s cubic-bezier(.2,.8,.2,1);
-}
-
-
-/* =========================================
-   📋 MISSION TEXT MOTION
-========================================= */
-
-.mission-item:hover h3 {
-    transform: translateX(4px);
-}
-
-.mission-item h3 {
-    transition:
-        transform .35s cubic-bezier(.2,.8,.2,1);
-}
-
-
-/* =========================================
-   🔳 QR PULSE
-========================================= */
-
-.qr-card {
-    animation: qrFloat 5s ease-in-out infinite;
-}
-
-@keyframes qrFloat {
-
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-4px);
-    }
-}
-
-.qr-card:hover {
-    animation-play-state: paused;
-}
-
-
-/* =========================================
-   🌑 CLOSING — SLOW MOTION
-========================================= */
-
-.closing-content {
-    animation: closingContentIn 1s cubic-bezier(.2,.8,.2,1) both;
-}
-
-@keyframes closingContentIn {
-
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-/* =========================================
-   📱 MOBILE
-========================================= */
-
-@media (max-width: 700px) {
-
-    .hero-photo {
-        animation:
-            heroPhotoIn 1s cubic-bezier(.2,.8,.2,1) .15s both,
-            heroPhotoFloat 7s ease-in-out 1.2s infinite;
-    }
-
-    .qr-card {
-        animation:
-            qrFloat 6s ease-in-out infinite;
-    }
-
-    .program-card:hover h3,
-    .mission-item:hover h3 {
-        transform: none;
-    }
-}
-
-
-/* =========================================
-   ♿ REDUCE MOTION
-========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .hero-photo,
-    .number,
-    .qr-card,
-    .support-thanks::after,
-    .hero-button::after,
-    .share-button::after {
-        animation: none !important;
-    }
-}
-/* =========================================
-   AZRIEL #4 — ANIMATION 4C
-   NAVBAR MOTION
-========================================= */
-
-/* Navbar lebih smooth saat halaman bergerak */
-.navbar {
-    transition:
-        padding .35s ease,
-        background .35s ease,
-        box-shadow .35s ease,
-        border-color .35s ease;
-}
-
-/* Efek depth halus */
-.navbar:hover {
-    background: rgba(245, 245, 245, .92);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, .06);
-}
-
-/* Logo sedikit hidup */
-.logo {
-    transition:
-        transform .35s cubic-bezier(.2,.8,.2,1);
-}
-
-.logo:hover {
-    transform: translateY(-2px);
-}
-
-/* Menu link lebih smooth */
-.nav-links a {
-    transition:
-        color .3s ease,
-        transform .3s cubic-bezier(.2,.8,.2,1);
-}
-
-.nav-links a:hover {
-    transform: translateY(-2px);
-}
-
-/* Mobile button */
-.menu-toggle {
-    transition:
-        transform .3s cubic-bezier(.2,.8,.2,1),
-        box-shadow .3s ease;
-}
-
-.menu-toggle:active {
-    transform: scale(.92);
-}
-
-/* Mobile menu item */
-.mobile-menu a {
-    transition:
-        background .3s ease,
-        transform .3s cubic-bezier(.2,.8,.2,1);
-}
-
-.mobile-menu a:active {
-    transform: scale(.97);
-}
-
-/* =========================================
-   📱 MOBILE
-========================================= */
-
-@media (max-width: 700px) {
-
-    .navbar:hover {
-        box-shadow: none;
-    }
-
-    .nav-links a:hover {
-        transform: none;
-    }
-
-    .logo:hover {
-        transform: none;
-    }
-}
-
-/* =========================================
-   ♿ REDUCE MOTION
-========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .navbar,
-    .logo,
-    .nav-links a,
-    .menu-toggle,
-    .mobile-menu a {
-        transition: none !important;
-    }
-}
+</body>
+</html>
