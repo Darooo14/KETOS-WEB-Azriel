@@ -2,7 +2,10 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Azriel Khalif Raka — Calon Ketua OSIS #4</title>
 
@@ -10,6 +13,8 @@
         name="description"
         content="Website kampanye Azriel Khalif Raka — Calon Ketua OSIS SMPIT AN-NAJMA nomor urut 4."
     >
+
+    <meta name="theme-color" content="#f5f5f2">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,10 +32,7 @@
 
 <body>
 
-    <!-- SCROLL PROGRESS -->
     <div class="scroll-progress"></div>
-
-    <!-- MOUSE GLOW -->
     <div class="mouse-glow"></div>
 
 
@@ -38,15 +40,15 @@
          NAVBAR
     ========================== -->
 
-    <header class="navbar">
+    <header class="navbar" id="navbar">
 
         <div class="nav-container">
 
-            <a href="#home" class="logo">
+            <a href="#home" class="logo" aria-label="Azriel #4">
                 AZRIEL<span>#4</span>
             </a>
 
-            <nav class="desktop-nav">
+            <nav class="desktop-nav" aria-label="Navigasi utama">
 
                 <a href="#home">Home</a>
                 <a href="#profil">Profil</a>
@@ -60,8 +62,10 @@
             <button
                 class="menu-btn"
                 id="menuBtn"
-                aria-label="Buka menu"
                 type="button"
+                aria-label="Buka menu"
+                aria-expanded="false"
+                aria-controls="mobileMenu"
             >
                 <span></span>
                 <span></span>
@@ -76,7 +80,11 @@
          MOBILE MENU
     ========================== -->
 
-    <div class="mobile-menu" id="mobileMenu">
+    <div
+        class="mobile-menu"
+        id="mobileMenu"
+        aria-hidden="true"
+    >
 
         <a href="#home">Home</a>
         <a href="#profil">Profil</a>
@@ -84,6 +92,7 @@
         <a href="#visi">Visi</a>
         <a href="#misi">Misi</a>
         <a href="#program">Program</a>
+        <a href="#dukung">Dukung</a>
 
     </div>
 
@@ -117,12 +126,18 @@
 
                     <div class="hero-actions">
 
-                        <a href="#profil" class="primary-btn">
+                        <a
+                            href="#profil"
+                            class="primary-btn"
+                        >
                             Kenali Saya
                             <span>↗</span>
                         </a>
 
-                        <a href="#program" class="secondary-btn">
+                        <a
+                            href="#program"
+                            class="secondary-btn"
+                        >
                             Lihat Program
                         </a>
 
@@ -130,7 +145,9 @@
 
                     <div class="hero-number-wrap">
 
-                        <span class="hero-number">04</span>
+                        <span class="hero-number">
+                            04
+                        </span>
 
                         <span class="hero-number-text">
                             PILIHANMU<br>
@@ -146,7 +163,6 @@
 
                     <div class="hero-image-frame">
 
-                        <!-- GANTI src DENGAN FOTO AZRIEL -->
                         <img
                             src="{{ url_for('static', filename='img/azriel.jpg') }}"
                             alt="Azriel Khalif Raka"
@@ -159,13 +175,17 @@
 
                     </div>
 
-                    <div class="hero-outline-text">
+                    <div
+                        class="hero-outline-text"
+                        aria-hidden="true"
+                    >
                         AZRIEL
                     </div>
 
                 </div>
 
             </div>
+
 
             <div class="scroll-indicator">
                 <span></span>
@@ -179,7 +199,10 @@
              PROFIL
         ========================== -->
 
-        <section class="section profile-section" id="profil">
+        <section
+            class="section profile-section"
+            id="profil"
+        >
 
             <div class="section-container reveal">
 
@@ -201,10 +224,10 @@
 
                     <div class="profile-image tilt-card">
 
-                        <!-- GANTI FOTO JIKA PERLU -->
                         <img
                             src="{{ url_for('static', filename='img/azriel.jpg') }}"
-                            alt="Foto Azriel"
+                            alt="Foto Azriel Khalif Raka"
+                            loading="lazy"
                         >
 
                         <div class="profile-image-number">
@@ -235,17 +258,23 @@
 
                             <div>
                                 <span>NAMA</span>
-                                <strong>Azriel Khalif Raka</strong>
+                                <strong>
+                                    Azriel Khalif Raka
+                                </strong>
                             </div>
 
                             <div>
                                 <span>CALON</span>
-                                <strong>Ketua OSIS</strong>
+                                <strong>
+                                    Ketua OSIS
+                                </strong>
                             </div>
 
                             <div>
                                 <span>NOMOR</span>
-                                <strong>#04</strong>
+                                <strong>
+                                    #04
+                                </strong>
                             </div>
 
                         </div>
@@ -263,7 +292,10 @@
              ALASAN
         ========================== -->
 
-        <section class="section reason-section" id="alasan">
+        <section
+            class="section reason-section"
+            id="alasan"
+        >
 
             <div class="section-container reveal">
 
@@ -285,6 +317,7 @@
                         </h2>
 
                     </div>
+
 
                     <div class="card-content">
 
@@ -310,7 +343,10 @@
              VISI
         ========================== -->
 
-        <section class="section vision-section" id="visi">
+        <section
+            class="section vision-section"
+            id="visi"
+        >
 
             <div class="section-container reveal">
 
@@ -326,9 +362,12 @@
                             OUR VISION
                         </span>
 
-                        <h2>Visi</h2>
+                        <h2>
+                            Visi
+                        </h2>
 
                     </div>
+
 
                     <div class="vision-content">
 
@@ -356,7 +395,10 @@
              MISI
         ========================== -->
 
-        <section class="section mission-section" id="misi">
+        <section
+            class="section mission-section"
+            id="misi"
+        >
 
             <div class="section-container reveal">
 
@@ -376,6 +418,7 @@
 
                 <div class="mission-list">
 
+
                     <div class="mission-item tilt-card">
 
                         <span class="mission-number">
@@ -383,15 +426,21 @@
                         </span>
 
                         <div>
-                            <h3>Keaktifan Siswa</h3>
+
+                            <h3>
+                                Keaktifan Siswa
+                            </h3>
 
                             <p>
                                 Mendorong siswa untuk lebih aktif
                                 dalam kegiatan sekolah dan organisasi.
                             </p>
+
                         </div>
 
-                        <span class="mission-arrow">↗</span>
+                        <span class="mission-arrow">
+                            ↗
+                        </span>
 
                     </div>
 
@@ -403,16 +452,22 @@
                         </span>
 
                         <div>
-                            <h3>Program yang Bermanfaat</h3>
+
+                            <h3>
+                                Program yang Bermanfaat
+                            </h3>
 
                             <p>
                                 Membuat kegiatan yang kreatif,
                                 positif, dan memberikan manfaat
                                 nyata bagi siswa.
                             </p>
+
                         </div>
 
-                        <span class="mission-arrow">↗</span>
+                        <span class="mission-arrow">
+                            ↗
+                        </span>
 
                     </div>
 
@@ -424,18 +479,25 @@
                         </span>
 
                         <div>
-                            <h3>Disiplin & Tanggung Jawab</h3>
+
+                            <h3>
+                                Disiplin & Tanggung Jawab
+                            </h3>
 
                             <p>
                                 Membangun budaya disiplin,
                                 bertanggung jawab, dan saling
                                 menghargai.
                             </p>
+
                         </div>
 
-                        <span class="mission-arrow">↗</span>
+                        <span class="mission-arrow">
+                            ↗
+                        </span>
 
                     </div>
+
 
                 </div>
 
@@ -448,7 +510,10 @@
              PROGRAM
         ========================== -->
 
-        <section class="section program-section" id="program">
+        <section
+            class="section program-section"
+            id="program"
+        >
 
             <div class="section-container reveal">
 
@@ -475,8 +540,6 @@
                 <div class="program-grid">
 
 
-                    <!-- PROGRAM 01 -->
-
                     <article class="program-card tilt-card">
 
                         <div class="program-top">
@@ -491,6 +554,7 @@
 
                         </div>
 
+
                         <div class="program-space">
 
                             <h3>
@@ -500,6 +564,7 @@
 
                         </div>
 
+
                         <p>
                             Mendorong budaya menjaga kebersihan
                             dan menciptakan lingkungan sekolah
@@ -508,8 +573,6 @@
 
                     </article>
 
-
-                    <!-- PROGRAM 02 -->
 
                     <article class="program-card tilt-card">
 
@@ -525,6 +588,7 @@
 
                         </div>
 
+
                         <div class="program-space">
 
                             <h3>
@@ -534,6 +598,7 @@
 
                         </div>
 
+
                         <p>
                             Menyediakan ruang bagi siswa untuk
                             menunjukkan bakat, minat, ide,
@@ -542,8 +607,6 @@
 
                     </article>
 
-
-                    <!-- PROGRAM 03 -->
 
                     <article class="program-card tilt-card">
 
@@ -559,6 +622,7 @@
 
                         </div>
 
+
                         <div class="program-space">
 
                             <h3>
@@ -567,6 +631,7 @@
                             </h3>
 
                         </div>
+
 
                         <p>
                             Membuka ruang komunikasi agar
@@ -585,14 +650,20 @@
 
 
         <!-- =========================
-             SUPPORT
+             DUKUNG
         ========================== -->
 
-        <section class="support-section" id="dukung">
+        <section
+            class="support-section"
+            id="dukung"
+        >
 
             <div class="support-container reveal">
 
-                <div class="support-number">
+                <div
+                    class="support-number"
+                    aria-hidden="true"
+                >
                     04
                 </div>
 
@@ -613,7 +684,10 @@
                         disiplin, dan bertanggung jawab.
                     </p>
 
-                    <a href="#home" class="support-button">
+                    <a
+                        href="#home"
+                        class="support-button"
+                    >
                         Dukung Azriel #4
                         <span>↗</span>
                     </a>
@@ -633,7 +707,10 @@
 
             <div class="closing-inner reveal">
 
-                <div class="closing-outline">
+                <div
+                    class="closing-outline"
+                    aria-hidden="true"
+                >
                     #04
                 </div>
 
@@ -650,7 +727,6 @@
             </div>
 
         </section>
-
 
     </main>
 
@@ -688,13 +764,27 @@
 
     <script>
 
+        const navbar =
+            document.querySelector(".navbar");
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
+        const progress =
+            document.querySelector(".scroll-progress");
+
+        const mouseGlow =
+            document.querySelector(".mouse-glow");
+
+
         /* =========================
-           NAVBAR SCROLL
+           NAVBAR
         ========================== */
 
-        const navbar = document.querySelector(".navbar");
-
-        window.addEventListener("scroll", () => {
+        function updateNavbar() {
 
             if (window.scrollY > 40) {
                 navbar.classList.add("scrolled");
@@ -702,34 +792,89 @@
                 navbar.classList.remove("scrolled");
             }
 
-        });
+        }
+
+        window.addEventListener(
+            "scroll",
+            updateNavbar,
+            { passive: true }
+        );
+
+        updateNavbar();
 
 
         /* =========================
            MOBILE MENU
         ========================== */
 
-        const menuBtn = document.getElementById("menuBtn");
-        const mobileMenu = document.getElementById("mobileMenu");
+        function closeMobileMenu() {
+
+            menuBtn.classList.remove("active");
+
+            mobileMenu.classList.remove("active");
+
+            menuBtn.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            mobileMenu.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+        }
+
 
         menuBtn.addEventListener("click", () => {
 
-            menuBtn.classList.toggle("active");
-            mobileMenu.classList.toggle("active");
+            const active =
+                menuBtn.classList.toggle("active");
+
+            mobileMenu.classList.toggle(
+                "active",
+                active
+            );
+
+            menuBtn.setAttribute(
+                "aria-expanded",
+                active
+            );
+
+            mobileMenu.setAttribute(
+                "aria-hidden",
+                !active
+            );
 
         });
 
 
-        document.querySelectorAll(".mobile-menu a").forEach(link => {
+        document
+            .querySelectorAll(".mobile-menu a")
+            .forEach(link => {
 
-            link.addEventListener("click", () => {
-
-                menuBtn.classList.remove("active");
-                mobileMenu.classList.remove("active");
+                link.addEventListener(
+                    "click",
+                    closeMobileMenu
+                );
 
             });
 
-        });
+
+        /* =========================
+           ESCAPE
+        ========================== */
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (event.key === "Escape") {
+                    closeMobileMenu();
+                }
+
+            }
+        );
 
 
         /* =========================
@@ -739,142 +884,209 @@
         const revealElements =
             document.querySelectorAll(".reveal");
 
-        const revealObserver =
-            new IntersectionObserver(
-                entries => {
 
-                    entries.forEach(entry => {
+        if (
+            "IntersectionObserver"
+            in window
+        ) {
 
-                        if (entry.isIntersecting) {
+            const revealObserver =
+                new IntersectionObserver(
+                    entries => {
 
-                            entry.target.classList.add("visible");
+                        entries.forEach(entry => {
 
-                            revealObserver.unobserve(
+                            if (
+                                entry.isIntersecting
+                            ) {
+
                                 entry.target
-                            );
+                                    .classList
+                                    .add("visible");
 
-                        }
+                                revealObserver
+                                    .unobserve(
+                                        entry.target
+                                    );
 
-                    });
+                            }
 
-                },
-                {
-                    threshold: 0.12
-                }
-            );
+                        });
 
-        revealElements.forEach(element => {
-            revealObserver.observe(element);
-        });
+                    },
+                    {
+                        threshold: 0.12
+                    }
+                );
+
+
+            revealElements.forEach(element => {
+
+                revealObserver.observe(element);
+
+            });
+
+        } else {
+
+            revealElements.forEach(element => {
+
+                element.classList.add("visible");
+
+            });
+
+        }
 
 
         /* =========================
            SCROLL PROGRESS
-        ========================= */
+        ========================== */
 
-        const progress =
-            document.querySelector(".scroll-progress");
-
-        window.addEventListener("scroll", () => {
+        function updateProgress() {
 
             const scrollTop =
                 window.scrollY;
 
             const documentHeight =
-                document.documentElement.scrollHeight -
+                document.documentElement
+                    .scrollHeight -
                 window.innerHeight;
 
             const percentage =
                 documentHeight > 0
-                    ? (scrollTop / documentHeight) * 100
+                    ? (
+                        scrollTop /
+                        documentHeight
+                    ) * 100
                     : 0;
 
             progress.style.width =
                 percentage + "%";
 
-        });
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            updateProgress,
+            { passive: true }
+        );
+
+        updateProgress();
 
 
         /* =========================
            MOUSE GLOW
-        ========================= */
+        ========================== */
 
-        const mouseGlow =
-            document.querySelector(".mouse-glow");
+        if (
+            window.matchMedia(
+                "(pointer: fine)"
+            ).matches
+        ) {
 
-        window.addEventListener("mousemove", event => {
+            window.addEventListener(
+                "mousemove",
+                event => {
 
-            mouseGlow.style.left =
-                event.clientX + "px";
+                    mouseGlow.style.left =
+                        event.clientX + "px";
 
-            mouseGlow.style.top =
-                event.clientY + "px";
+                    mouseGlow.style.top =
+                        event.clientY + "px";
 
-        });
+                },
+                { passive: true }
+            );
+
+        }
 
 
         /* =========================
            CARD TILT
-        ========================= */
+        ========================== */
 
         const cards =
-            document.querySelectorAll(".tilt-card");
+            document.querySelectorAll(
+                ".tilt-card"
+            );
 
-        cards.forEach(card => {
 
-            card.addEventListener("mousemove", event => {
+        if (
+            window.matchMedia(
+                "(pointer: fine)"
+            ).matches
+        ) {
 
-                if (window.innerWidth < 800) {
-                    return;
-                }
+            cards.forEach(card => {
 
-                const rect =
-                    card.getBoundingClientRect();
+                card.addEventListener(
+                    "mousemove",
+                    event => {
 
-                const x =
-                    event.clientX - rect.left;
+                        const rect =
+                            card.getBoundingClientRect();
 
-                const y =
-                    event.clientY - rect.top;
+                        const x =
+                            event.clientX -
+                            rect.left;
 
-                const centerX =
-                    rect.width / 2;
+                        const y =
+                            event.clientY -
+                            rect.top;
 
-                const centerY =
-                    rect.height / 2;
+                        const centerX =
+                            rect.width / 2;
 
-                const rotateX =
-                    ((y - centerY) / centerY) * -2.5;
+                        const centerY =
+                            rect.height / 2;
 
-                const rotateY =
-                    ((x - centerX) / centerX) * 2.5;
+                        const rotateX =
+                            (
+                                (y - centerY) /
+                                centerY
+                            ) * -2;
 
-                card.style.transform =
-                    `perspective(900px)
-                     rotateX(${rotateX}deg)
-                     rotateY(${rotateY}deg)
-                     translateY(-4px)`;
+                        const rotateY =
+                            (
+                                (x - centerX) /
+                                centerX
+                            ) * 2;
 
-                card.style.setProperty(
-                    "--mouse-x",
-                    `${x}px`
+
+                        card.style.transform =
+                            `perspective(900px)
+                             rotateX(${rotateX}deg)
+                             rotateY(${rotateY}deg)
+                             translateY(-3px)`;
+
+
+                        card.style.setProperty(
+                            "--mouse-x",
+                            `${x}px`
+                        );
+
+                        card.style.setProperty(
+                            "--mouse-y",
+                            `${y}px`
+                        );
+
+                    }
                 );
 
-                card.style.setProperty(
-                    "--mouse-y",
-                    `${y}px`
+
+                card.addEventListener(
+                    "mouseleave",
+                    () => {
+
+                        card.style.transform =
+                            "";
+
+                    }
                 );
 
             });
 
-
-            card.addEventListener("mouseleave", () => {
-
-                card.style.transform = "";
-
-            });
-
-        });
+        }
 
 
         /* =========================
@@ -887,47 +1099,52 @@
             )
             .forEach(button => {
 
-                button.addEventListener("click", function(event) {
+                button.addEventListener(
+                    "click",
+                    function(event) {
 
-                    const ripple =
-                        document.createElement("span");
+                        const ripple =
+                            document.createElement(
+                                "span"
+                            );
 
-                    ripple.classList.add("ripple");
+                        ripple.className =
+                            "ripple";
 
-                    const rect =
-                        this.getBoundingClientRect();
 
-                    ripple.style.left =
-                        (event.clientX - rect.left) + "px";
+                        const rect =
+                            this.getBoundingClientRect();
 
-                    ripple.style.top =
-                        (event.clientY - rect.top) + "px";
 
-                    this.appendChild(ripple);
+                        ripple.style.left =
+                            (
+                                event.clientX -
+                                rect.left
+                            ) + "px";
 
-                    setTimeout(() => {
-                        ripple.remove();
-                    }, 650);
+                        ripple.style.top =
+                            (
+                                event.clientY -
+                                rect.top
+                            ) + "px";
 
-                });
+
+                        this.appendChild(
+                            ripple
+                        );
+
+
+                        setTimeout(
+                            () => {
+                                ripple.remove();
+                            },
+                            650
+                        );
+
+                    }
+                );
 
             });
-
-
-        /* =========================
-           ESCAPE MOBILE MENU
-        ========================== */
-
-        document.addEventListener("keydown", event => {
-
-            if (event.key === "Escape") {
-
-                menuBtn.classList.remove("active");
-                mobileMenu.classList.remove("active");
-
-            }
-
-        });
 
 
     </script>
