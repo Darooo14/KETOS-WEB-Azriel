@@ -70,14 +70,12 @@
 
         <div class="nav-container">
 
-
             <a
                 href="#home"
                 class="logo"
             >
                 AZRIEL<span>#4</span>
             </a>
-
 
 
             <!-- DESKTOP MENU -->
@@ -103,7 +101,6 @@
             </nav>
 
 
-
             <!-- MOBILE BUTTON -->
 
             <button
@@ -113,7 +110,6 @@
             >
                 ☰
             </button>
-
 
 
             <!-- MOBILE MENU -->
@@ -143,6 +139,10 @@
                     Dukung Azriel
                 </a>
 
+                <a href="#share">
+                    Bagikan Website
+                </a>
+
             </div>
 
         </div>
@@ -167,28 +167,23 @@
 
             <div class="hero-content">
 
-
                 <div class="badge">
                     CALON KETUA OSIS
                 </div>
 
-
                 <p class="school">
                     SMPIT AN-NAJMA
                 </p>
-
 
                 <h1>
                     AZRIEL<br>
                     <span>KHALIF RAKA</span>
                 </h1>
 
-
                 <p class="hero-description">
                     Calon Ketua OSIS nomor urut
                     <strong>#4</strong>
                 </p>
-
 
                 <a
                     href="#profil"
@@ -199,7 +194,6 @@
                 </a>
 
             </div>
-
 
 
             <!-- FOTO -->
@@ -239,7 +233,6 @@
             <div class="section-label">
                 01 — PROFIL
             </div>
-
 
             <div class="profile-grid">
 
@@ -302,12 +295,10 @@
                     “
                 </div>
 
-
                 <h2>
                     Alasan Menjadi<br>
                     Ketua OSIS
                 </h2>
-
 
                 <p>
 
@@ -351,7 +342,6 @@
                     <h2>
                         Visi
                     </h2>
-
 
                     <p>
 
@@ -399,13 +389,11 @@
                         01
                     </span>
 
-
                     <div>
 
                         <h3>
                             Keaktifan Siswa
                         </h3>
-
 
                         <p>
 
@@ -427,13 +415,11 @@
                         02
                     </span>
 
-
                     <div>
 
                         <h3>
                             Program yang Bermanfaat
                         </h3>
-
 
                         <p>
 
@@ -455,13 +441,11 @@
                         03
                     </span>
 
-
                     <div>
 
                         <h3>
                             Disiplin & Tanggung Jawab
                         </h3>
-
 
                         <p>
 
@@ -510,11 +494,9 @@
                         01
                     </span>
 
-
                     <h3>
                         Kebersihan & Kenyamanan
                     </h3>
-
 
                     <p>
 
@@ -534,11 +516,9 @@
                         02
                     </span>
 
-
                     <h3>
                         Bakat & Kreativitas
                     </h3>
-
 
                     <p>
 
@@ -557,11 +537,9 @@
                         03
                     </span>
 
-
                     <h3>
                         OSSA Mendengar Aspirasi
                     </h3>
-
 
                     <p>
 
@@ -581,7 +559,7 @@
 
 
         <!-- ================================
-             DUKUNG AZRIEL
+             DUKUNGAN
         ================================= -->
 
         <section
@@ -590,7 +568,6 @@
         >
 
             <div class="support-content">
-
 
                 <div class="section-label">
                     06 — DUKUNGAN
@@ -612,21 +589,15 @@
                 </p>
 
 
-
-                <!-- UCAPAN TERIMA KASIH -->
-
                 <div class="support-thanks">
-
 
                     <div class="thanks-icon">
                         🙌
                     </div>
 
-
                     <h3>
                         Terima kasih!
                     </h3>
-
 
                     <p>
 
@@ -651,13 +622,83 @@
 
 
         <!-- ================================
+             QR CODE & SHARE
+        ================================= -->
+
+        <section
+            id="share"
+            class="share-section"
+        >
+
+            <div class="share-content">
+
+                <div class="section-label">
+                    07 — BAGIKAN
+                </div>
+
+
+                <h2>
+                    Bagikan<br>
+                    <span>Website Ini.</span>
+                </h2>
+
+
+                <p>
+
+                    Scan QR Code atau bagikan website
+                    Azriel kepada teman-temanmu.
+
+                </p>
+
+
+                <!-- QR CODE -->
+
+                <div class="qr-card">
+
+                    <div
+                        id="qrcode"
+                        class="qrcode"
+                    ></div>
+
+
+                    <p>
+                        Scan untuk membuka website
+                        Azriel #4
+                    </p>
+
+                </div>
+
+
+                <!-- SHARE BUTTON -->
+
+                <button
+                    class="share-button"
+                    id="shareButton"
+                >
+                    📤 Bagikan Website
+                </button>
+
+
+                <div
+                    class="copy-message"
+                    id="copyMessage"
+                >
+                    ✓ Link berhasil disalin!
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
              PENUTUP
         ================================= -->
 
         <section class="closing">
 
             <div class="closing-content">
-
 
                 <div class="closing-number">
                     #04
@@ -698,6 +739,14 @@
         </p>
 
     </footer>
+
+
+
+    <!-- ================================
+         QR CODE LIBRARY
+    ================================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 
 
 
@@ -762,7 +811,7 @@
 
         const revealElements =
             document.querySelectorAll(
-                ".section, .closing, .program-card, .mission-item, .vision-card, .reason-box, .support-section"
+                ".section, .closing, .program-card, .mission-item, .vision-card, .reason-box, .support-section, .share-section"
             );
 
 
@@ -805,6 +854,114 @@
             revealObserver.observe(element);
 
         });
+
+    </script>
+
+
+
+    <!-- ================================
+         QR CODE + SHARE
+    ================================= -->
+
+    <script>
+
+        const websiteURL =
+            "https://darooo14.github.io/KETOS-WEB-Azriel/";
+
+
+        /* =====================================
+           QR CODE
+        ===================================== */
+
+        new QRCode(
+            document.getElementById("qrcode"),
+            {
+                text: websiteURL,
+                width: 220,
+                height: 220,
+                correctLevel:
+                    QRCode.CorrectLevel.H
+            }
+        );
+
+
+        /* =====================================
+           SHARE
+        ===================================== */
+
+        const shareButton =
+            document.getElementById(
+                "shareButton"
+            );
+
+        const copyMessage =
+            document.getElementById(
+                "copyMessage"
+            );
+
+
+        shareButton.addEventListener(
+            "click",
+            async () => {
+
+                if (navigator.share) {
+
+                    try {
+
+                        await navigator.share({
+
+                            title:
+                                "Azriel Khalif Raka #4",
+
+                            text:
+                                "Website calon Ketua OSIS SMPIT AN-NAJMA #4",
+
+                            url:
+                                websiteURL
+
+                        });
+
+                    } catch (error) {
+
+                        console.log(
+                            "Share dibatalkan."
+                        );
+
+                    }
+
+                } else {
+
+                    try {
+
+                        await navigator.clipboard.writeText(
+                            websiteURL
+                        );
+
+                        copyMessage.classList.add(
+                            "show"
+                        );
+
+
+                        setTimeout(() => {
+
+                            copyMessage.classList.remove(
+                                "show"
+                            );
+
+                        }, 2500);
+
+                    } catch (error) {
+
+                        alert(
+                            "Silakan copy link website secara manual."
+                        );
+
+                    }
+
+                }
+
+            }
+        );
 
     </script>
 
