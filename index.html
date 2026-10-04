@@ -645,3 +645,39 @@
 
 </body>
 </html>
+<script>
+    const revealElements =
+        document.querySelectorAll(
+            ".section, .closing, .program-card, .mission-item, .vision-card, .reason-box"
+        );
+
+    revealElements.forEach((element) => {
+        element.classList.add("reveal");
+    });
+
+    const revealObserver =
+        new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("show");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+    revealElements.forEach((element) => {
+        revealObserver.observe(element);
+    });
+</script>
