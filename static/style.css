@@ -747,3 +747,239 @@
 
 </body>
 </html>
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(45px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   SUPPORT SECTION
+========================================= */
+
+.support-section {
+    padding: 130px 6%;
+    background: #e9e9e9;
+    text-align: center;
+}
+
+
+.support-content {
+    max-width: 750px;
+    margin: auto;
+}
+
+
+.support-section .section-label {
+    margin-bottom: 30px;
+}
+
+
+.support-section h2 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size:
+        clamp(50px, 8vw, 100px);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+}
+
+
+.support-section h2 span {
+    opacity: 0.25;
+}
+
+
+.support-section > .support-content > p {
+    max-width: 550px;
+
+    margin: 35px auto 0;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    opacity: 0.65;
+}
+
+
+/* =========================================
+   THANK YOU CARD
+========================================= */
+
+.support-thanks {
+    margin: 50px auto 0;
+
+    max-width: 600px;
+
+    padding: 35px 30px;
+
+    border:
+        1px solid rgba(0, 0, 0, 0.08);
+
+    border-radius: 28px;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.06);
+
+    animation:
+        thanksFloat 4s ease-in-out infinite;
+}
+
+
+.thanks-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+    animation:
+        thanksBounce 2s ease-in-out infinite;
+}
+
+
+.support-thanks h3 {
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 32px;
+
+    margin-bottom: 12px;
+}
+
+
+.support-thanks p {
+    margin: 0;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    opacity: 0.65;
+}
+
+
+.support-number {
+    margin-top: 45px;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 90px;
+
+    font-weight: 700;
+
+    opacity: 0.08;
+
+    letter-spacing: -5px;
+}
+
+
+/* =========================================
+   THANK YOU ANIMATION
+========================================= */
+
+@keyframes thanksFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+@keyframes thanksBounce {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateY(-7px)
+            scale(1.08);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .support-section {
+        padding: 90px 6%;
+    }
+
+
+    .support-section h2 {
+        letter-spacing: -3px;
+    }
+
+
+    .support-thanks {
+        padding: 30px 22px;
+
+        border-radius: 22px;
+    }
+
+
+    .support-thanks h3 {
+        font-size: 27px;
+    }
+
+
+    .support-number {
+        font-size: 65px;
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .support-thanks,
+    .thanks-icon {
+        animation: none;
+    }
+
+}
