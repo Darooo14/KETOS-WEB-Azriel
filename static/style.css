@@ -1890,3 +1890,275 @@ footer {
         transform: none !important;
     }
 }
+/* =========================================
+   AZRIEL #4 — ANIMATION UPGRADE 4A
+   TAMPILAN LAMA TETAP
+========================================= */
+
+/* Smooth semua interaksi */
+.program-card,
+.mission-item,
+.vision-card,
+.reason-box,
+.qr-card,
+.support-thanks,
+.hero-button,
+.share-button {
+    transition:
+        transform 0.45s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.45s ease,
+        background 0.35s ease;
+}
+
+
+/* =========================================
+   ✨ CARD SHINE
+========================================= */
+
+.program-card,
+.vision-card,
+.reason-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.program-card::after,
+.vision-card::after,
+.reason-box::after {
+    content: "";
+
+    position: absolute;
+    top: -80%;
+    left: -120%;
+
+    width: 55%;
+    height: 260%;
+
+    background: linear-gradient(
+        100deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transform: rotate(20deg);
+
+    pointer-events: none;
+
+    transition: left .8s ease;
+}
+
+.program-card:hover::after,
+.vision-card:hover::after,
+.reason-box:hover::after {
+    left: 150%;
+}
+
+
+/* =========================================
+   🎯 BUTTON PRESS
+========================================= */
+
+.hero-button:active,
+.share-button:active {
+    transform: scale(.96);
+}
+
+
+/* =========================================
+   💫 FOTO — GLOW LEBIH HIDUP
+========================================= */
+
+.photo-glow {
+    animation:
+        glowMove 5s ease-in-out infinite,
+        glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        opacity: .45;
+        filter: blur(70px);
+    }
+
+    50% {
+        opacity: .65;
+        filter: blur(82px);
+    }
+}
+
+
+/* =========================================
+   🖼️ FOTO HOVER
+========================================= */
+
+.photo-card {
+    transition:
+        transform .55s cubic-bezier(.2,.8,.2,1),
+        filter .55s ease;
+}
+
+.photo-card:hover {
+    transform: rotate(0deg) scale(1.035) translateY(-8px);
+
+    filter:
+        drop-shadow(0 30px 55px rgba(0,0,0,.2));
+}
+
+
+/* =========================================
+   🌊 MISSION HOVER
+========================================= */
+
+.mission-item {
+    transition:
+        transform .4s cubic-bezier(.2,.8,.2,1),
+        background .4s ease,
+        border-color .4s ease;
+}
+
+.mission-item:hover {
+    transform: translateX(7px);
+}
+
+
+/* =========================================
+   ✨ PROGRAM CARD HOVER
+========================================= */
+
+.program-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 50px rgba(0,0,0,.10);
+}
+
+
+/* =========================================
+   👁️ VISION CARD HOVER
+========================================= */
+
+.vision-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 50px rgba(0,0,0,.10);
+}
+
+
+/* =========================================
+   📦 REASON BOX HOVER
+========================================= */
+
+.reason-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0,0,0,.10);
+}
+
+
+/* =========================================
+   🙌 SUPPORT CARD
+========================================= */
+
+.support-thanks {
+    animation: thanksFloat 4s ease-in-out infinite;
+}
+
+.support-thanks:hover {
+    transform: translateY(-5px);
+}
+
+
+/* =========================================
+   ❤️ THANK YOU ICON
+========================================= */
+
+.thanks-icon {
+    animation:
+        thanksBounce 2s ease-in-out infinite;
+}
+
+
+/* =========================================
+   🔳 QR CARD
+========================================= */
+
+.qr-card {
+    transition:
+        transform .45s cubic-bezier(.2,.8,.2,1),
+        box-shadow .45s ease;
+}
+
+.qr-card:hover {
+    transform: translateY(-7px) scale(1.015);
+    box-shadow: 0 25px 55px rgba(0,0,0,.16);
+}
+
+
+/* =========================================
+   📜 SCROLL REVEAL — LEBIH SMOOTH
+========================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(28px)
+        scale(.985);
+
+    filter: blur(3px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1),
+        filter .8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    filter: blur(0);
+}
+
+
+/* =========================================
+   📱 MOBILE — TETAP RINGAN
+========================================= */
+
+@media (max-width: 700px) {
+
+    .program-card:hover,
+    .vision-card:hover,
+    .reason-box:hover,
+    .qr-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .mission-item:hover {
+        transform: translateX(3px);
+    }
+
+    .photo-card:hover {
+        transform: rotate(0deg) scale(1.015);
+    }
+}
+
+
+/* =========================================
+   ♿ REDUCE MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .photo-glow,
+    .support-thanks,
+    .thanks-icon {
+        animation: none !important;
+    }
+
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+    }
+}
